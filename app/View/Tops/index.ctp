@@ -1,6 +1,7 @@
+
 <div>
 <img src="/img/top/main.png">
-<br />
+<br>
 </div>
 
 トップページだよ
