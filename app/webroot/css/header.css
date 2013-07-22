@@ -2,23 +2,45 @@
 /* CSS Document */
 
 
-
-#headerLine {
-	height: 5px;
-	background-color: #263248;
-	background-repeat: repeat-x;
-	margin-bottom: 10px;
-}
-
 #headerLogo {
 	float: left;
+	margin-top: 5px;
 	margin-left: 10px;
 	margin-right: 10px;
 	padding-bottom: 10px;
 }
 
+
 h1 {
+	float: left;
 	font-size: 10px;
+	margin-top: 10px;
 	color: #828283;
-	padding-top: 5px; 
+}
+
+
+
+#headerNavi {
+	float: right;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-bottom: 10px;
+}
+
+#headerNavi h2 {
+	font-size: 12px;
+	float:left;
+	padding-left: 5px;
+}
+
+
+#headerNavi li {
+	float: left;
+}
+
+#headerNavi img {
+	float: left;
+	padding-left: 25px;
+	padding-top: 2px;
 }

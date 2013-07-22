@@ -1,3 +1,4 @@
+<link href="../../webroot/css/common.css" rel="stylesheet" type="text/css" />
 <?php
 /**
  *
@@ -43,24 +44,40 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 </head>
 <body>
-	<div id="container">
-			<div id="header">
- 	            	<?php echo $this->Element("header"); ?>
-			<!-- <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>  -->
-			</div>
-			<div id="content">
-				<?php echo $this->Session->flash(); ?>
-				<?php echo $this->fetch('content'); ?>
-			</div>
-			<div id="footer">
-				<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-			</div>
-	</div>
+    <div id="page">
+    	<div id="header">
+        </div>
+        	
+           	<div id="container">
+        
+                    <?php echo $this->Element("header"); ?>
+            <!-- <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>  -->
+            </div>
+            
+            
+            <div id="content">
+                <?php echo $this->Session->flash(); ?>
+                <?php echo $this->fetch('content'); ?>
+            </div>
+        </div>
+            
+            
+        
+            <div id="footer">
+                <?php echo $this->Html->link(
+                    $this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
+                    'http://www.cakephp.org/',
+                    array('target' => '_blank', 'escape' => false)
+                );
+            ?>
+            </div>
+		<--!div#container-->
+    	</div>
+    <--!div#page->
+    </div>
+    
+    
+    
 	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>

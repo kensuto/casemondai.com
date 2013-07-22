@@ -10,29 +10,51 @@ padding:0;
 }
 
 
-
 body {
 	text-align:center;
 	background-color:#FFF;
 }
 
-#container {
+li { list-style-type: none;}
+
+a:link, a:visited {color: #1681b2; text-decoration:none;}
+a:hover {color: #1f9dd9;  text-decoration:none;}
+a img {vertical-align: bottom;}
+
+
+/* ======================
+page
+====================== */
+
+#page {
 	font-family:"メイリオ", 'Lucida Grande', 'Hiragino Kaku Gothic Pro', "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", Meiryo, Geneva, Arial, Verdana, sans-serif;
 	font-size:12px;
 	line-height:150%;
 	list-style:none;
 	text-align: left;
+	}
+	
+#header {
+	height: 5px;
+	background-color: #263248;
+	margin-bottom: 10px;
+	width:100%;
+}
+
+
+
+#container {
 	margin-right: auto;
 	margin-left: auto;
 	width: 980px;
 }
 
 
-a:link, a:visited {color: #1681b2; text-decoration:none;}
-a:hover {color: #1f9dd9;  text-decoration:none;}
-a img {vertical-align: bottom;}
 
-/* clearfix */
+
+/* ======================
+Clearfix
+====================== */
 .clearfix {zoom:1;}
 .clearfix:after{
 content: "";
