@@ -15,7 +15,7 @@ body {
 	background-color:#FFF;
 }
 
-li { list-style-type: none;}
+
 
 a:link, a:visited {color: #1681b2; text-decoration:none;}
 a:hover {color: #1f9dd9;  text-decoration:none;}
@@ -34,13 +34,6 @@ page
 	text-align: left;
 	}
 	
-#header {
-	height: 5px;
-	background-color: #263248;
-	margin-bottom: 10px;
-	width:100%;
-}
-
 
 
 #container {

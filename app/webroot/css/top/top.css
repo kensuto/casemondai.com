@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#mainVisual {
+	text-align: center;
+	position: relative;
+	top: 50px:
+}
+	
+.fbLoginBtn {
+	position: absolute;
+	top: 144px;
+	left: 222px;
+}
+
+#content {
+	clear: both;
+}
+	
