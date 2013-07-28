@@ -15,12 +15,15 @@
 	<div id="headerNavi">
 	<ul>
 		<li>
+		<img src="/img/common/icon_tri_gray.png">
 		<h2><a href="">問題を投稿する</a></h2>
 		</li>
 		<li>
+		<img src="/img/common/icon_tri_gray.png">
 		<h2><a href="">会員登録</a></h2>
 		</li>
 		<li>
+		<img src="/img/common/icon_tri_gray.png">
 		<h2><a href="">ログイン</a></h2>
 		</li>
 	</ul>

@@ -27,7 +27,6 @@
 	margin-top: 5px;
 	margin-left: 10px;
 	margin-right: 10px;
-	padding-bottom: 10px;
 }
 
 
@@ -45,23 +44,25 @@ h1 {
 	margin-top: 5px;
 	margin-left: 10px;
 	margin-right: 10px;
-	padding-bottom: 10px;
 }
+
+#headerNavi img {
+	float: left;
+	margin-top: 2px;
+}	
 
 #headerNavi h2 {
 	font-size: 12px;
-	padding-left: 5px;
+	padding-left: 10px;
 }
 
 #headerNavi ul {
-	list-style-image: url(../../img/common/icon_tri_gray.png);
+	float: left;
 }
 
 #headerNavi li {
-	
 	display: inline-block;
-	margin-left: 10px;
-	
+	margin-left: 15px;
 	}
 
 
