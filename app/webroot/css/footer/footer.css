@@ -3,4 +3,36 @@
 
 #footer {
 	clear: both;
+	height: 200px;
+	background-color: #263248;
+	width:100%;
+}
+
+
+#footerContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 940px;
+}
+
+#footerContent {
+	padding-top: 20px;
+	padding-left: 30px;
+}
+
+#footerContent h3 {
+	color: #FFF;
+	font-size: 10px;
+}
+
+#footerContent span.mailto {
+	color: #FFF;
+	font-size: 10px;
+}
+
+#copyrights {
+	text-align: center;
+	color: #FFF;
+	font-size: 10px;
+	margin-top: 30px;
 }
