@@ -6,6 +6,7 @@
 	<img src="/img/top/main.png">
 	<div class="fbLoginBtn">
 		<img src="/img/top/fb_login_btn.png">
+<?php echo( $this->Facebook->logout() ); ?>
 	</div>
 </div>
 

@@ -33,5 +33,6 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public $components = array('DebugKit.Toolbar');
+	public $helpers = array('Facebook.Facebook');
 	var $layout = 'common';
 }
