@@ -5,14 +5,15 @@
 	clear: both;
 	height: 200px;
 	background-color: #263248;
-	width:100%;
+	width: 	100%;
+	margin-top: 50px;
 }
 
 
 #footerContainer {
 	margin-left: auto;
 	margin-right: auto;
-	width: 940px;
+	width: 980px;
 }
 
 #footerContent {
