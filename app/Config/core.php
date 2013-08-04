@@ -187,19 +187,35 @@
  * the cake shell command: cake schema create Sessions
  *
  */
-	Configure::write('Session', array(
-		'defaults' => 'php'
-	));
+Configure::write('Security', array(
+    'level' => 'high',
+    'salt' => 'qwertyuiopasdfghjklzxcvbnm',
+    'cipherSeed' => '12345678900987654321'
+));
+Configure::write('Session', array(
+    'defaults' => 'database',
+    'cookie' => 'SID',
+    'timeout' => 259200,
+    'ini' => Array(
+        'session.cookie_lifetime' => 2580000,
+        'session.gc_maxlifetime' => 2580000,
+        'session.gc_probability' => 1,
+        'session.gc_divisor' => 100
+    )
+));
+//	Configure::write('Session', array(
+//		'defaults' => 'php'
+//	));
 
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', md5('casemondai') );
+//	Configure::write('Security.salt', md5('casemondai') );
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', md5( '76859309657453542496749683645' ) );
+//	Configure::write('Security.cipherSeed', md5( '76859309657453542496749683645' ) );
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
