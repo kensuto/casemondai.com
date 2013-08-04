@@ -1,4 +1,4 @@
-<link href="../../webroot/css/common.css" rel="stylesheet" type="text/css" />
+
 <?php
 /**
  *
