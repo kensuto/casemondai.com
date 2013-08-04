@@ -13,7 +13,66 @@
 	left: 222px;
 }
 
-#content {
+#mainContent {
+	clear: both;
+	width: 720px;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+	
+#mainContent #mainContentHeader h2{
+	float: left;
+	padding-left: 5px;
+	font-size: 16px;
+}
+
+#mainContent #mainContentHeader #goAll {
+	text-align: right;
+}
+
+#mainContent .mainContentQuestion {
+	margin-top: 25px;
+	margin-left: 25px;
+	padding-bottom: 13px;
+	background:url(../../img/common/line_dot.png) repeat-x center bottom;
+}
+
+#mainContent .mainContentQuestion .title {
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#mainContent .mainContentQuestion .id {
+	float: right;
+	display: inline-block;
+	text-align: right;
+}
+
+#mainContent .mainContentQuestion .date {
+	float: right;
+	display: inline-block;
+	text-align: right;
+	margin-left: 15px;
+}
+
+
+#mainContent .mainContentQuestion .mainContentQuestionContent {
+	padding-top: 12px;
+	margin-left: -3px;
+	margin-right: -3px;
+	line-height: 20px;
 	clear: both;
 }
+
+
+#mainContent .mainContentQuestion .mainContentQuestionContent .readAll {
+	margin-top: -8px;
+	text-align: right;
+}
+	
+
+
+
+	
 	
