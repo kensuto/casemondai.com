@@ -33,8 +33,6 @@ page
 	list-style:none;
 	text-align: left;
 	}
-	
-
 
 #container {
 	margin-right: auto;
@@ -43,6 +41,11 @@ page
 }
 
 
+#content {
+	margin-right: auto;
+	margin-left: auto;
+	width: 940px;
+}
 
 
 /* ======================

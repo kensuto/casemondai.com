@@ -60,6 +60,6 @@ ID:mkayokom
 		<!--div#answerContent-->
 		</div>
 	<!--div#answer">
-	</di>
+	</div>
 <!--div#showAnswers-->
 </div>
