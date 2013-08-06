@@ -1,3 +1,90 @@
 @charset "UTF-8";
 /* CSS Document */
 
+#pankuzu {
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	width: 920px;
+}
+
+/* 問題 */
+
+#question {
+	border: outset 3px  #CCCCCC;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;    /* 角丸　Safari,Google Chrome用 */  
+    -moz-border-radius: 8px;   /* 角丸　Firefox用 */ 
+	padding: 20px 15px 7px 15px;
+}
+
+#questionHeaderTitle {
+	float: left;
+}
+
+#questionHeaderTitleH2 {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#questionHeaderCount {
+	font-size: 10px;
+	color: #999;
+}
+
+#questionContent {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+}
+
+#questionFooter {
+	text-align: right;
+}
+
+
+/* メインカラム */
+
+#mainColumn {
+	width: 710px;
+}
+
+
+#postAnswer {
+	width: 680px;
+	margin-top: 30px;
+}
+
+#postAnswerH2 {
+	font-size: 16px;
+	color: #FF9800;
+	margin-bottom: 10px;
+}
+
+#showAnswers {
+	width: 680px;
+	margin-top: 30px;
+}
+
+#showAnswersH2 {
+	font-size: 16px;
+	color: #FF9800;
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+
+#answer {
+	border: outset 1px #ECECFB;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;    /* 角丸　Safari,Google Chrome用 */  
+    -moz-border-radius: 8px;   /* 角丸　Firefox用 */ 
+	padding: 20px 30px 30px 30px;
+	margin-top: 10px;
+}
+
+#answerHeader {
+	text-align: right;
+	margin-bottom: 10px;
+}
+
