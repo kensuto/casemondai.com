@@ -53,7 +53,7 @@ ID:mkayokom
             <form method="POST" action="xxx.cgi">
                 <textarea name="answer" style="width: 670px; height: 150px;"></textarea>
                 <br />
-                <input type=submit value="投稿">
+                <input type="image" src="../../webroot/img/qDetail/btn_post.png" value="投稿" style="text-align: right">
             </form>
         </div>
     <!--div#postAnswer-->
