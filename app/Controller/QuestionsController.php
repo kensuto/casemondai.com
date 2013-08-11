@@ -45,7 +45,17 @@ class QuestionsController extends AppController {
  */
 	public $uses = array();
 
-	public function qDetail() {
+	public function detail() {
 		//とりあえず枠だけ
+	}
+	
+	//問題リスト
+	public function index() {
+		
+	}
+	
+	//問題投稿
+	public function post() {
+		
 	}
 }

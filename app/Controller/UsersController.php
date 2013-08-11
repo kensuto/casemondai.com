@@ -58,16 +58,30 @@ class UsersController extends AppController {
 		    'Facebook.Connect',
         );
  
+ 
     public function beforeFilter()
     {
         parent::beforeFilter();
 //		$this->layout = 'default';
-        $this->Auth->allow('add', 'login');
+        $this->Auth->allow('add', 'login','register','register_confirm','register_done');
     }
  
     public function index()
     {
     }
+ 
+ 
+    //kaiin touroku input.
+	public function register() {
+	}
+	//kaiin touroku kakunin.
+	public function register_confirm() {
+	}
+	//kaiin touroku kanryou.
+	public function register_done() {
+	}
+	
+	
  
     public function login() {
 debug( $this->Connect->user() );

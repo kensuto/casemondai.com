@@ -13,6 +13,15 @@
 	</p>
 </div>
 
+<!--見出し-->
+<div id="headline">
+	<p>
+		<div id="headlineIcon">
+		<img src="../../img/common/icon_rct_org.png">
+		</div>
+		<h2 id="headlineH2">ケース問題と解答例</h2>
+	</p>
+</div>
 
 <!--問題文-->
 
@@ -53,7 +62,9 @@ ID:mkayokom
             <form method="POST" action="xxx.cgi">
                 <textarea name="answer" style="width: 670px; height: 150px;"></textarea>
                 <br />
-                <input type="image" src="../../webroot/img/qDetail/btn_post.png" value="投稿" style="text-align: right">
+                <div id="postAnswerBtn">
+                <input type="image" src="../../img/qDetail/btn_post.png" value="投稿"">
+                </div>
             </form>
         </div>
     <!--div#postAnswer-->
@@ -67,11 +78,11 @@ ID:mkayokom
         <p><h2 id="showAnswersH2">他の人の解答例を見る</h2></p>
         <div id="answer">
             <div id="answerHeader">
-            	<img src="../../webroot/img/qDetail/star_yelw.png" />
-                <img src="../../webroot/img/qDetail/star_yelw.png" />
-                <img src="../../webroot/img/qDetail/star_yelw.png" />
-                <img src="../../webroot/img/qDetail/star_yelw.png" />
-                <img src="../../webroot/img/qDetail/star_gray.png" />
+            	<img src="../../img/qDetail/star_yelw.png" />
+                <img src="../../img/qDetail/star_yelw.png" />
+                <img src="../../img/qDetail/star_yelw.png" />
+                <img src="../../img/qDetail/star_yelw.png" />
+                <img src="../../img/qDetail/star_gray.png" />
              
                 ID:mkayokom
                 2013.5.8 20:53

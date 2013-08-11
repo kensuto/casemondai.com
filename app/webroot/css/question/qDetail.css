@@ -9,6 +9,17 @@
 	width: 920px;
 }
 
+#headlineIcon {
+	float: left;
+}
+
+#headlineH2 {
+	font-size: 16px;
+	margin-left: 10px
+	margin-bottom: 10px;
+}
+
+
 /* 問題 */
 
 #question {
@@ -60,6 +71,11 @@
 	font-size: 16px;
 	color: #FF9800;
 	margin-bottom: 10px;
+}
+
+#postAnswerBtn {
+	text-align: right;
+	margin-top: 10px;
 }
 
 #showAnswers {
