@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+#loginContainer {
+	margin: 0px auto 0px auto;
+	width: 740px;
+}
+
+#intro {
+	margin: 40px 0px 35px 0px;
+	font-size: 14px;
+	line-height:150%;
+}
+
+#left {
+	float: left;
+	width: 330px;
+	margin-bottom: 150px;
+}
+
+
+#right {
+	float: right;
+	width: 330px;
+	margin-bottom: 150px;
+}
+
+.content {
+	background-color: #EEEEEE;
+	height: 300px;
+}
+
+#invite {
+	padding: 100px 30px 10px 30px
+}
+
+.btnLayout {
+	text-align: center;
+}
+
+#or {
+	text-align: center;
+	margin: 20px 0px 20px 0px;	
+}

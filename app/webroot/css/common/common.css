@@ -9,12 +9,6 @@ margin:0;
 padding:0;
 }
 
-
-body {
-	text-align: left;
-	background-color:#FFF;
-}
-
 li { list-style-type: none;}
 
 a:link, a:visited {color: #1681b2; text-decoration:none;}
@@ -41,7 +35,7 @@ page
 }
 
 
-#content {
+content {
 	margin-right: auto;
 	margin-left: auto;
 	width: 920px;
@@ -58,3 +52,39 @@ display: block;
 clear: both;
 }
 
+/* ======================
+parts
+====================== */
+
+/*パンくず*/
+
+#pankuzu {
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+/*オレンジアイコンの見出し*/
+
+#headlineRctOrg {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+#headlineIconOrg {
+	float: left;
+}
+
+#headlineRctOrgH2 {
+	font-size: 16px;
+	padding-left: 15px;
+}
+
+/*オレンジ文字の見出し*/
+
+#headlineOrgH2 {
+	font-size: 14px;
+	color: #FF9800;
+	margin-bottom: 10px;
+}

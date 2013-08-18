@@ -5,18 +5,20 @@
 <div id="mainVisual">
 	<img src="/img/top/main.png">
 	<div class="fbLoginBtn">
-		<img src="/img/top/fb_login_btn.png">
+		<img src="/img/common/fb_login_btn.png">
 <?php echo( $this->Facebook->logout() ); ?>
 	</div>
 </div>
 
 <div id="mainContent">
-	<div id="mainContentHeader">
-		<img src="/img/common/icon_rct_org.png" style="float:left" >
-		<h2>&nbsp;新着の回答</h2>
-		<p id="goAll">
-			<a href="/">>> すべての問題を見る</a>
-		</p>
+	<div id="headline">
+		<div id="headlineIconOrg"><img src="/img/common/icon_rct_org.png"></div>
+		<h2 id="headlineRctOrgH2" style="float: left;">新着の回答</h2>
+		<div id="goAll">	
+			<p>
+				<a href="/">>> すべての問題を見る</a>
+			</p>
+		</div>
 	</div>
 	<div class="mainContentQuestion">
 		

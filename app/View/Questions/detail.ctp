@@ -2,7 +2,7 @@
 
 
 <?php
-	echo $this->Html->css('question/qDetail'); 
+	echo $this->Html->css('question/detail'); 
 ?>
 
 
@@ -14,12 +14,12 @@
 </div>
 
 <!--見出し-->
-<div id="headline">
+<div id="headlineRctOrg">
 	<p>
-		<div id="headlineIcon">
+		<div id="headlineIconOrg">
 		<img src="../../img/common/icon_rct_org.png">
 		</div>
-		<h2 id="headlineH2">ケース問題と解答例</h2>
+		<h2 id="headlineRctOrgH2">例題と解答例</h2>
 	</p>
 </div>
 
@@ -57,7 +57,7 @@ ID:mkayokom
     <!--回答を投稿する-->
     
     <div id="postAnswer">
-        <p><h2 id="postAnswerH2">解答を投稿する</h2></p>
+        <p><h2 id="headlineOrgH2">解答を投稿する</h2></p>
         <div id="postAnswerTextbox">
             <form method="POST" action="xxx.cgi">
                 <textarea name="answer" style="width: 670px; height: 150px;"></textarea>
@@ -75,9 +75,15 @@ ID:mkayokom
     
     
     <div id="showAnswers">
-        <p><h2 id="showAnswersH2">他の人の解答例を見る</h2></p>
+        <p><h2 id="headlineOrgH2">他の人の解答例を見る</h2></p>
         <div id="answer">
-            <div id="answerHeader">
+          <div id="answerHeader">
+          	<div class="star">
+ 				<div class="star-rect" onmousemove="star.start(event, this, 1);"><ul><li>&nbsp;</li><li style="width: 80%;">&nbsp;</li></ul></div>
+ 				<div class="star-text">
+ 					<span><span id="starStars1">4.0</span>/5</span>
+  					<span><span id="starUsers1">10</span>人が評価しています</span>
+				</div>
             	<img src="../../img/qDetail/star_yelw.png" />
                 <img src="../../img/qDetail/star_yelw.png" />
                 <img src="../../img/qDetail/star_yelw.png" />
@@ -104,5 +110,7 @@ ID:mkayokom
 <!--div#mainColumn-->
 </div>
 
-<!--よくわからないがここでdiv#containerを終わらせないとfooterが100％にならない-->
+<!-- よくわからないがここで#containerと#contentを終わらせないとfooterが100％にならない -->
 </div>
+</div>
+

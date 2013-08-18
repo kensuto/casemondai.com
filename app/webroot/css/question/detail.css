@@ -1,24 +1,6 @@
 @charset "UTF-8";
 /* CSS Document */
 
-#pankuzu {
-	margin-top: 20px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 10px;
-	width: 920px;
-}
-
-#headlineIcon {
-	float: left;
-}
-
-#headlineH2 {
-	font-size: 16px;
-	margin-left: 10px
-	margin-bottom: 10px;
-}
-
 
 /* 問題 */
 
@@ -67,12 +49,6 @@
 	margin-top: 30px;
 }
 
-#postAnswerH2 {
-	font-size: 16px;
-	color: #FF9800;
-	margin-bottom: 10px;
-}
-
 #postAnswerBtn {
 	text-align: right;
 	margin-top: 10px;
@@ -81,13 +57,6 @@
 #showAnswers {
 	width: 680px;
 	margin-top: 30px;
-}
-
-#showAnswersH2 {
-	font-size: 16px;
-	color: #FF9800;
-	margin-top: 30px;
-	margin-bottom: 5px;
 }
 
 #answer {
