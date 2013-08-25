@@ -21,7 +21,7 @@
 		
 		<div class="content">
 			<div id="invite">
-				<p>会員登録（無料）をすると、すべての解答が閲覧できます。</p>
+				<p>会員登録（無料）をすると、回答を投稿できます。</p>
 			</div>
 			<div class="btnLayout">
 				<img src="../../img/common/btn_reg.png">
