@@ -22,6 +22,11 @@
 <!--中身の部分はじまり-->
 <div id="main">
 
+<!--プログレスバー-->
+<div id="step">
+	<img src="../../img/registar/step1.png">
+</div>
+
 <!--導入-->
 <div id="explanation">
 	<p>会員登録（無料）をしていただくと、すべてのコンテンツをご利用いただけます。</p>
@@ -37,12 +42,7 @@
 	</div>
 </dl>
 
-<!--フォーム-->
-
-<div id="step">
-	<img src="../../img/registar/step1.png">
-</div>
-
+<!--フォームここから-->
 <table id="form">
 	<tr>	
 		<th class="th">ユーザーネーム</th>
