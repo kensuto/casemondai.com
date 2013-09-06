@@ -24,9 +24,9 @@
 <div id="mainColumn">
 	
 	<div class="question">
-		<div class="questionHeader">
+		<div class="questionHeader" >
 			<div class="questionHeaderTitle">
-				<p>日本全国の1日のトイレットペーパーの消費量を求めよ。</p>
+				<p><a href="">日本全国の1日のトイレットペーパーの消費量を求めよ。</a></p>
 			</div>
 			<div class="questionHeaderCount">
 				<p>(<a href="">2件の回答</a>)</p>
@@ -42,7 +42,8 @@
 		<!--div.questionHeader-->
 		</div>
 		<div class="questionContent">
-			<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等・・・</p>	
+			<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間	
+			・・・<a href="">続きを読む</a></p>
 		<!--div.questionContent-->
 		</div>
 	</div>
