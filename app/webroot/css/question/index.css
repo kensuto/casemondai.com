@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.question {
+	margin: 0px 0 10px 0;
+	padding: 0 0 15px 0;
+	background:url(../../img/common/line_dot.png) repeat-x center bottom;
+}
+
+.questionHeaderTitle {
+	float: left;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+.questionHeaderCount {
+	float: left;
+}
+
+.updates {
+	float: right;
+}
+
+.lastUpdate {
+	display: inline-block;
+}
+
+.update {
+	display: inline-block;
+}
+
+.questionContent {
+	clear: both;
+	padding: 15px 0 0 0;
+}

@@ -23,39 +23,38 @@
 	</p>
 </div>
 
-<!--問題文-->
-
-<div id="question">
-	<div id="questionHeader">
-    	<div id="questionHeaderTitle">
-		<h2 id="questionHeaderTitleH2">日本で1日に使われるトイレットペーパーの消費量は？</h2>
-		</div>
-		<div id="questionHeaderCount">
-        （２件の回答）
-        </div>
-	<!--div#questionHeader-->
-	</div>
-	
-	<div id="questionContent">
-日本全国で１日に使用されるトイレットペーパーの消費量が知りたい。どんな方法で推測したら良いだろうか？
-	<!--div#questionContent-->
-	</div>
-	
-	<div id="questionFooter">
-ID:mkayokom
-2013.5.8 20:53
-	<!--div#questionFooter-->
-	</div>
-
-<!--div#question-->
-</div>
-
 
 <!--メインカラム-->
-<div id="mainColumn">
+<div id"mainColumn">
+
+	<!--問題文-->
+	<div id="question">
+		<div id="questionHeader">
+	    	<div id="questionHeaderTitle">
+			<h2 id="questionHeaderTitleH2">日本で1日に使われるトイレットペーパーの消費量は？</h2>
+			</div>
+			<div id="questionHeaderCount">
+	        （２件の回答）
+	        </div>
+		<!--div#questionHeader-->
+		</div>
+		
+		<div id="questionContent">
+	日本全国で１日に使用されるトイレットペーパーの消費量が知りたい。どんな方法で推測したら良いだろうか？
+		<!--div#questionContent-->
+		</div>
+		
+		<div id="questionFooter">
+	ID:mkayokom
+	2013.5.8 20:53
+		<!--div#questionFooter-->
+		</div>
+	
+	<!--div#question-->
+	</div>
+    
     
     <!--回答を投稿する-->
-    
     <div id="postAnswer">
         <p><h2 id="headlineOrgH2">解答を投稿する</h2></p>
         <div id="postAnswerTextbox">
@@ -63,7 +62,7 @@ ID:mkayokom
                 <textarea name="answer" style="width: 670px; height: 150px;"></textarea>
                 <br />
                 <div id="postAnswerBtn">
-                <input type="image" src="../../img/qDetail/btn_post.png" value="投稿"">
+                <input type="image" src="../../img/qDetail/btn_post.png" value="投稿">
                 </div>
             </form>
         </div>
@@ -72,8 +71,6 @@ ID:mkayokom
     
     
     <!--他の人の回答を見る-->
-    
-    
     <div id="showAnswers">
         <p><h2 id="headlineOrgH2">他の人の解答例を見る</h2></p>
         <div id="answer">
@@ -89,6 +86,8 @@ ID:mkayokom
                 <img src="../../img/qDetail/star_yelw.png" />
                 <img src="../../img/qDetail/star_yelw.png" />
                 <img src="../../img/qDetail/star_gray.png" />
+               	<!--div#star-->
+               	</div>
              
                 ID:mkayokom
                 2013.5.8 20:53
@@ -102,7 +101,7 @@ ID:mkayokom
             
             <!--div#answerContent-->
             </div>
-        <!--div#answer">
+        <!--div#answer-->
         </div>
     <!--div#showAnswers-->
     </div>
@@ -110,7 +109,11 @@ ID:mkayokom
 <!--div#mainColumn-->
 </div>
 
+<!--右カラム-->
+<div id="rightColumn">
+	<p>右カラム</p>
+<!--div#rightColumn-->
+</div>
+
 <!-- よくわからないがここで#containerと#contentを終わらせないとfooterが100％にならない -->
-</div>
-</div>
 

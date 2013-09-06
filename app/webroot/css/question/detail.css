@@ -5,11 +5,13 @@
 /* 問題 */
 
 #question {
+	width: 640px;  /* ホントは680で指定しなきゃいけないんだけど、680にするとなぜかはみ出す。 */ 
 	border: outset 3px  #CCCCCC;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;    /* 角丸　Safari,Google Chrome用 */  
     -moz-border-radius: 8px;   /* 角丸　Firefox用 */ 
 	padding: 20px 15px 7px 15px;
+	margin: 10px 0 0 0;
 }
 
 #questionHeaderTitle {
@@ -29,18 +31,10 @@
 #questionContent {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	
 }
 
 #questionFooter {
 	text-align: right;
-}
-
-
-/* メインカラム */
-
-#mainColumn {
-	width: 710px;
 }
 
 
