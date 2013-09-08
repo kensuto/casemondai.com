@@ -42,9 +42,6 @@
 		
 		<div class="content">
 		    <?php echo $this->Session->flash('auth'); ?>
-		<?php
-			echo( $this->Facebook->login() );
-		?>
 		    <?php echo $this->Form->create('User', Array('url' => '/users/login')); ?>
 		    <table>
 		    	<tr>
@@ -67,7 +64,18 @@
 			</div>
 			
 		   	<div class="btnLayout">
-				<img src="../../img/common/fb_login_btn.png">
+<?php
+				echo(
+					$this->Html->link(
+						$this->Html->image("../../img/common/fb_login_btn.png", array("alt" => "facebook login")),
+						array(
+							'controller' => 'users',
+							'action'     => 'fb_login',
+						),
+						array('escape' => false)
+					)
+				);
+?>
 			</div>
 
 		</div>

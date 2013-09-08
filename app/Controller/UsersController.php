@@ -1,114 +1,67 @@
 <?php
-/**
- * Static content controller.
- *
- * This file will render views from views/pages/
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Controller
- * @since         CakePHP(tm) v 0.2.9
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
-App::uses('AppController', 'Controller');
+class UsersController extends AppController
+{
+	var	$components = array('Auth');
+ 
+	function beforeFilter()
+	{
 
-/**
- * Static content controller
- *
- * Override this controller by placing a copy in controllers directory of an application
- *
- * @package       app.Controller
- * @link http://book.cakephp.org/2.0/en/controllers/pages-controller.html
- */
-class UsersController extends AppController {
+		$this->Auth->authenticate = array('Facebook');
 
-/**
- * Controller name
- *
- * @var string
- */
-	public $name = 'Users';
+		$this->Auth->allow( 'login', 'fb_login', 'callback', 'logout' );
+		$this->Auth->loginRedirect = '/users/index/';
+		$this->Auth->logoutRedirect = '/';
+		$this->Auth->loginError = 'ユーザ名もしくはパスワードに誤りがあります';
+		$this->Auth->authError = 'アクセス権限がありません。';
 
-/**
- * This controller does not use a model
- *
- * @var array
- */
-    public
-        $uses = Array('User'),
-        $components = Array(
-            'Session',
-            'Auth' => Array(
-                'loginRedirect'		=> Array('controller' => 'users', 'action' => 'index'),
-                'logoutRedirect'	=> Array('controller' => 'users', 'action' => 'login'),
-                'loginAction'		=> Array('controller' => 'users', 'action' => 'login'),
-                'authenticate'		=> Array('Form' => Array('fields' => Array('username' => 'email'))),
-				'authorize'			=> 'Controller',
-            ),
-//		    'Facebook.Connect' => array('model' => 'User'),
-		    'Facebook.Connect',
-        );
  
- 
-    public function beforeFilter()
-    {
-        parent::beforeFilter();
-//		$this->layout = 'default';
-        $this->Auth->allow('add', 'login','register','register_confirm','register_done');
-    }
- 
-    public function index()
-    {
-    }
- 
- 
-    //kaiin touroku input.
-	public function register() {
+		parent::beforeFilter();
 	}
-	//kaiin touroku kakunin.
-	public function register_confirm() {
-	}
-	//kaiin touroku kanryou.
-	public function register_done() {
+ 
+	public function index()
+	{
+		$user = $this->Auth->user();
+debug( $user );
+		if(isset($user['Member']['user_id'])) {
+			$this->set('title_for_layout', $user['Member']['user_name'] . 'さんのマイページ');
+
+		} else {
+			$this->set('title_for_layout', 'ゲストさんのマイページ');
+		}
 	}
 	
-	
+	public function login(){
+	}
+
+	public function fb_login(){
+		$user = $this->Auth->user();
+
+//debug( $user );
+		if(isset($user['Member']['user_id'])) {
+			$this->redirect($this->Auth->loginRedirect() );
+
+		}else{
+//debug( 'Auth->login' );
+			$this->Auth->login();
+			$this->autoRender = false;
+		}
+	}
+
+	public function callback(){
+//debug( 'callback' );
+		$this->autoRender = false;
+		$user = $this->Auth->identify($this->request,$this->response);
+	}
  
-    public function login() {
-debug( $this->Connect->user() );
-        if($this->request->is('post')) {
-            if($this->Auth->login()) {
-                return $this->redirect($this->Auth->redirect());
-            } else {
-                $this->Session->setFlash(__('Username or password is incorrect'), 'default', array(), 'auth');
-            }
-        }
-    }
- 
-    public function logout($id = null)
-    {
-        $this->redirect($this->Auth->logout());
-    }
- 
-    public function add() {
-        if($this->request->is('post')) {
-            $this->User->create();
-            if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved'));
-                $this->redirect(array('action' => 'index'));
-            } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
-            }
-        }
-    }
+	public function logout()
+	{
+		$user = $this->Auth->user();
+//debug( $user );
+		if($user['Member']['user_id']) {
+//			$this->autoRender = false;
+			$this->Auth->logout();
+//debug( $user );
+		}
+//		$this->redirect( $this->Auth->logoutRedirect );
+	}
 }
-?>
