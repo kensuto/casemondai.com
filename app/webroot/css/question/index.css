@@ -2,7 +2,7 @@
 /* CSS Document */
 
 .question {
-	margin: 0px 0 10px 0;
+	margin: 0 0 35px 0;
 	padding: 0 0 15px 0;
 	background:url(../../img/common/line_dot.png) repeat-x center bottom;
 }
@@ -20,10 +20,6 @@
 
 .updates {
 	float: right;
-}
-
-.lastUpdate {
-	display: inline-block;
 }
 
 .update {

@@ -30,7 +30,7 @@ App::uses('AppController', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers/pages-controller.html
  */
 class QuestionsController extends AppController {
-
+	public $helpers = array('Html', 'Form');
 /**
  * Controller name
  *
@@ -44,18 +44,24 @@ class QuestionsController extends AppController {
  * @var array
  */
 	public $uses = array();
-
-	public function detail() {
-		//とりあえず枠だけ
-	}
 	
-	//問題リスト
+	//問題一覧
 	public function index() {
+		$this->set('questions',$this->Question->find('all'));
+	}
+
+	//問題詳細
+	public function detail($questionId = null) { //questionIdが設定されていなかったらnullで初期化する
+		if (!$questionId) {　//questionIdが入っていなかったら、エラーを返す
+			throw new NotFoundException(_('Invalid post'));
+		}
 		
+		$detail = $this->Question->find( 'first', array( 'conditions' => array( 'questionId' => $questionId ) ) );
+		$this->set('detail',$detail);
 	}
 	
 	//問題投稿
 	public function post() {
-		
+
 	}
 }

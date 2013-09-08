@@ -31,7 +31,7 @@
 	<div id="question">
 		<div id="questionHeader">
 	    	<div id="questionHeaderTitle">
-			<h2 id="questionHeaderTitleH2">日本で1日に使われるトイレットペーパーの消費量は？</h2>
+			<h2 id="questionHeaderTitleH2"><?php echo htmlspecialchars($detail['Question']['questionTitle']); ?></h2>
 			</div>
 			<div id="questionHeaderCount">
 	        （２件の回答）
@@ -114,6 +114,4 @@
 	<p>右カラム</p>
 <!--div#rightColumn-->
 </div>
-
-<!-- よくわからないがここで#containerと#contentを終わらせないとfooterが100％にならない -->
 

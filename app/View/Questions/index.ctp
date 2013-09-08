@@ -23,31 +23,32 @@
 <!--メインカラム-->
 <div id="mainColumn">
 	
+	<!--ここから、$questions配列をループして、問題の一覧情報を表示-->
+<!--	<?php debug($questions); ?> -->  
+	<?php foreach ($questions as $question): ?>
 	<div class="question">
 		<div class="questionHeader" >
 			<div class="questionHeaderTitle">
-				<p><a href="">日本全国の1日のトイレットペーパーの消費量を求めよ。</a></p>
+				<p><?php echo $this->Html->link($question['Question']['questionTitle'],
+				array('controller' => 'questions', 'action' => 'detail', $question['Question']['questionId'])); ?></p>
 			</div>
 			<div class="questionHeaderCount">
 				<p>(<a href="">2件の回答</a>)</p>
 			</div>
 			<div class="updates">
-				<div class="lastUpdate">
-					<p>最終更新日時</p>
-				</div>
 				<div class="update">
-					<p>2013-08-09 20:13</p>
+					<p><?php echo $question['Question']['created']; ?></p>
 				</div>
 			</div>
 		<!--div.questionHeader-->
 		</div>
 		<div class="questionContent">
-			<p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間	
-			・・・<a href="">続きを読む</a></p>
+			<p><?php echo $question['Question']['questionContent']; ?><?php echo $this->Html->link('･･･続きを読む',array('controller' => 'questions', 'action' => 'detail', $question['Question']['questionId'])); ?></p>
 		<!--div.questionContent-->
 		</div>
 	</div>
-	
+	<?php endforeach; ?>
+	<?php unset($question); ?>
 	
 <!--div#mainColumn-->
 </div>
