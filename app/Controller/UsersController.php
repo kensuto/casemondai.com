@@ -8,7 +8,15 @@ class UsersController extends AppController
 
 		$this->Auth->authenticate = array('Facebook');
 
-		$this->Auth->allow( 'login', 'fb_login', 'callback', 'logout' );
+		$this->Auth->allow( 
+			'login', 
+			'fb_login', 
+			'callback', 
+			'logout', 
+			'register', 
+			'register_confirm', 
+			'register_done' 
+		);
 		$this->Auth->loginRedirect = '/users/index/';
 		$this->Auth->logoutRedirect = '/';
 		$this->Auth->loginError = 'ユーザ名もしくはパスワードに誤りがあります';
