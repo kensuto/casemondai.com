@@ -45,17 +45,18 @@ class QuestionsController extends AppController {
  */
 	public $uses = array();
 	
-	//問題一覧
+	//問題一覧のアクション
 	public function index() {
 		$this->set('questions',$this->Question->find('all'));
 	}
 
-	//問題詳細
-	public function detail($questionId = null) { //questionIdが設定されていなかったらnullで初期化する
-		if (!$questionId) {//questionIdが入っていなかったら、エラーを返す
+	//問題詳細のアクション
+	public function detail($questionId = null) { //questionIdをnullで初期化する
+		if (!$questionId) {//questionIdが	入っていなかったら、エラーを返す
 			throw new NotFoundException(_('Invalid post'));
 		}
 		
+		$this->set("title_for_layout","Index Page");
 		$detail = $this->Question->find( 'first', array( 'conditions' => array( 'questionId' => $questionId ) ) );
 		$this->set('detail',$detail);
 	}
