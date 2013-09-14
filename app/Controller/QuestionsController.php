@@ -52,7 +52,7 @@ class QuestionsController extends AppController {
 
 	//問題詳細
 	public function detail($questionId = null) { //questionIdが設定されていなかったらnullで初期化する
-		if (!$questionId) {　//questionIdが入っていなかったら、エラーを返す
+		if (!$questionId) { //questionIdが入っていなかったら、エラーを返す
 			throw new NotFoundException(_('Invalid post'));
 		}
 		

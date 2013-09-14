@@ -24,7 +24,18 @@
 				<p>会員登録（無料）をすると、回答を投稿できます。</p>
 			</div>
 			<div class="btnLayout">
-				<img src="../../img/common/btn_reg.png">
+<?php
+				echo(
+					$this->Html->link(
+						$this->Html->image("../../img/common/btn_reg.png", array("alt" => "register")),
+						array(
+							'controller' => 'users',
+							'action'     => 'register',
+						),
+						array('escape' => false)
+					)
+				);
+?>
 			</div>
 		</div>
 	<!--div#left-->

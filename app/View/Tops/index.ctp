@@ -5,8 +5,18 @@
 <div id="mainVisual">
 	<img src="/img/top/main.png">
 	<div class="fbLoginBtn">
-		<img src="/img/common/fb_login_btn.png">
-<?php echo( $this->Facebook->logout() ); ?>
+<?php
+		echo(
+			$this->Html->link(
+				$this->Html->image("/img/common/fb_login_btn.png", array("alt" => "facebook login")),
+				array(
+					'controller' => 'users',
+					'action'     => 'fb_login',
+				),
+				array('escape' => false)
+			)
+		);
+?>
 	</div>
 </div>
 
@@ -16,7 +26,19 @@
 		<h2 id="headlineRctOrgH2" style="float: left;">新着の回答</h2>
 		<div id="goAll">	
 			<p>
-				<a href="/">>> すべての問題を見る</a>
+<?php
+		echo(
+			$this->Html->link(
+				'すべての問題を見る',
+				array(
+					'controller' => 'questions',
+					'action'     => 'index',
+				),
+				array('escape' => false)
+			)
+		);
+?>
+
 			</p>
 		</div>
 	</div>
