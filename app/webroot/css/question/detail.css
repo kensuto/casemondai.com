@@ -11,7 +11,7 @@
 	-webkit-border-radius: 8px;    /* 角丸　Safari,Google Chrome用 */  
     -moz-border-radius: 8px;   /* 角丸　Firefox用 */ 
 	padding: 20px 15px 7px 15px;
-	margin: 10px 0 0 0;
+	margin: 0 0 0 0;
 }
 
 #questionHeaderTitle {
@@ -42,6 +42,7 @@
 	width: 680px;
 	margin-top: 30px;
 }
+
 
 #postAnswerBtn {
 	text-align: right;

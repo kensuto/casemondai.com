@@ -80,7 +80,7 @@ parts
 /*オレンジアイコンの見出し*/
 
 #headlineRctOrg {
-	margin: 15px 0 20px 0;
+	margin: 25px 0 15px 0;
 }
 
 #headlineIconOrg {
@@ -88,7 +88,7 @@ parts
 }
 
 #headlineRctOrgH2 {
-	font-size: 16px;
+	font-size: 18px;
 	padding-left: 15px;
 }
 

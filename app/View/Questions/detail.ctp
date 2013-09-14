@@ -5,11 +5,14 @@
 	echo $this->Html->css('question/detail'); 
 ?>
 
-
+<?php 
+	if (isset($detail)):
+?><!--$detailに値が含まれているか-->
+		
 <!--パンくず-->
 <div id="pankuzu">
 	<p>
-		<a href="/">トップ</a>&nbsp;&nbsp;>&nbsp;&nbsp;日本で1日に使われるトイレットペーパーの消費量は？
+		<a href="/">トップ</a>&nbsp;&nbsp;>&nbsp;&nbsp;<?php echo htmlspecialchars($detail['Question']['questionTitle']); ?>
 	</p>
 </div>
 
@@ -25,7 +28,7 @@
 
 
 <!--メインカラム-->
-<div id"mainColumn">
+<div id="mainColumn">
 
 	<!--問題文-->
 	<div id="question">
@@ -40,32 +43,38 @@
 		</div>
 		
 		<div id="questionContent">
-	日本全国で１日に使用されるトイレットペーパーの消費量が知りたい。どんな方法で推測したら良いだろうか？
+		<?php echo htmlspecialchars($detail['Question']['questionContent']); ?>	
 		<!--div#questionContent-->
 		</div>
 		
 		<div id="questionFooter">
-	ID:mkayokom
-	2013.5.8 20:53
+			<?php echo htmlspecialchars($detail['Question']['userId']); ?>
+			&nbsp;&nbsp;
+			<?php echo htmlspecialchars($detail['Question']['created']); ?>
 		<!--div#questionFooter-->
 		</div>
 	
+	<?php endif; ?><!--$detailに値が含まれているか-->
 	<!--div#question-->
 	</div>
     
     
-    <!--回答を投稿する-->
+    <!--解答を投稿する-->
     <div id="postAnswer">
         <p><h2 id="headlineOrgH2">解答を投稿する</h2></p>
+        
         <div id="postAnswerTextbox">
-            <form method="POST" action="xxx.cgi">
-                <textarea name="answer" style="width: 670px; height: 150px;"></textarea>
-                <br />
-                <div id="postAnswerBtn">
-                <input type="image" src="../../img/qDetail/btn_post.png" value="投稿">
-                </div>
-            </form>
-        </div>
+        <?php
+        	echo $this->Form->create('Answer',array('action'=>'postAnswer'));
+//		 	echo $this->Form->create('Answer.questionId',array('type'=>'hidden','value'=>$detail['Question']['questionId']));
+			echo $this->Form->text('answer',array('style'=>'width:670px; height:80px;'));
+		?>
+		<div id="postAnswerBtn">
+			<?php echo $this->Form->submit('../../img/qDetail/btn_post.png'); ?>
+		</div>	
+			<?php echo $this->Form->end(); ?>
+		</div>
+        
     <!--div#postAnswer-->
     </div>
     
@@ -114,4 +123,3 @@
 	<p>右カラム</p>
 <!--div#rightColumn-->
 </div>
-

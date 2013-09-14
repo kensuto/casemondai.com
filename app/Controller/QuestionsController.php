@@ -20,6 +20,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 App::uses('AppController', 'Controller');
+App::uses('Sanitize', 'Utility');
 
 /**
  * Static content controller
@@ -45,25 +46,69 @@ class QuestionsController extends AppController {
  */
 	public $uses = array();
 	
-	//問題一覧のアクション
+	
+	/*====================
+	   	問題一覧のアクション
+	 ====================*/
+	
 	public function index() {
 		$this->set('questions',$this->Question->find('all'));
 	}
 
 
-	//問題詳細
-	public function detail($questionId = null) { //questionIdが設定されていなかったらnullで初期化する
+
+
+	/*====================
+	   	問題詳細のアクション
+	 ====================*/
+
+	 	public function detail($questionId = null) { //questionIdが設定されていなかったらnullで初期化する
 		if (!$questionId) { //questionIdが入っていなかったら、エラーを返す
 			throw new NotFoundException(_('Invalid post'));
 		}
 		
-		$this->set("title_for_layout","Index Page");
-		$detail = $this->Question->find( 'first', array( 'conditions' => array( 'questionId' => $questionId ) ) );
-		$this->set('detail',$detail);
+		$this->set("title_for_layout","Index Page");//これでページタイトルを指定できるらしいができてない。
+		$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.questionId' => $questionId ) ) );//questionIdでデータを検索して、$detailに入れる
+		$this->set('detail',$detail);//viewに$detailを渡している
+	
+	}//閉じ　function detail
+	
+	
+	
+	
+	/*====================
+	   解答投稿のアクション
+	 ====================*/
+	 
+	public function postAnswer() {
+		//post時の処理
+		if ($this->request->is('post')) {
+			$this->Answer->save($this->request->data);
+			
+		}
+	}//閉じ　function detail
+	
+	
+	
+	
+	/*====================
+	 	問題投稿のアクション
+	 ====================*/
+
+	public function post() {
+		if ($this->request->is('post')) {
+			$this->Question->save($this->request->data);
+			$last_id = $this->Question->getLastInsertID();
+			$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.questionId' => $last_id ) ) );//questionIdでデータを検索して、$detailに入れる
+			$this->set('detail',$detail);//viewに$detailを渡している
+			$this->redirect(array('controller' => 'questions', 'action' => 'detail', $detail['Question']['questionId']));
+			
+			} else {
+		}
+		
 	}
 	
-	//問題投稿
-	public function post() {
+	
+}//閉じ　class QuestionsController extends AppController
 
-	}
-}
+?>
