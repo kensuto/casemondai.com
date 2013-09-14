@@ -8,7 +8,15 @@ class UsersController extends AppController
 
 		$this->Auth->authenticate = array('Facebook');
 
-		$this->Auth->allow( 'login', 'fb_login', 'callback', 'logout' );
+		$this->Auth->allow( 
+			'login', 
+			'fb_login', 
+			'callback', 
+			'logout', 
+			'register', 
+			'register_confirm', 
+			'register_done' 
+		);
 		$this->Auth->loginRedirect = '/users/index/';
 		$this->Auth->logoutRedirect = '/';
 		$this->Auth->loginError = 'ユーザ名もしくはパスワードに誤りがあります';
@@ -38,7 +46,7 @@ debug( $user );
 
 //debug( $user );
 		if(isset($user['Member']['user_id'])) {
-			$this->redirect($this->Auth->loginRedirect() );
+			$this->redirect( $this->Auth->loginRedirect );
 
 		}else{
 //debug( 'Auth->login' );
@@ -50,7 +58,7 @@ debug( $user );
 	public function callback(){
 //debug( 'callback' );
 		$this->autoRender = false;
-		$user = $this->Auth->identify($this->request,$this->response);
+		$user = $this->Auth->identify( $this->request, $this->response );
 	}
  
 	public function logout()
@@ -63,5 +71,15 @@ debug( $user );
 //debug( $user );
 		}
 //		$this->redirect( $this->Auth->logoutRedirect );
+	}
+
+	//kaiin touroku input.
+	public function register() {
+	}
+	//kaiin touroku kakunin.
+	public function register_confirm() {
+	}
+	//kaiin touroku kanryou.
+	public function register_done() {
 	}
 }

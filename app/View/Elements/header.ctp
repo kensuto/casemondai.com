@@ -16,15 +16,55 @@
 	<ul>
 		<li>
 		<img src="/img/common/icon_tri_gray.png">
-		<h2><a href="">問題を投稿する</a></h2>
+		<h2>
+<?php
+			echo(
+				$this->Html->link(
+					'問題を投稿する',
+					array(
+						'controller' => 'questions',
+						'action'     => 'post',
+					),
+					array('escape' => false)
+				)
+			);
+?>
+
+		</h2>
 		</li>
 		<li>
 		<img src="/img/common/icon_tri_gray.png">
-		<h2><a href="">会員登録</a></h2>
+		<h2>
+<?php
+			echo(
+				$this->Html->link(
+					'会員登録',
+					array(
+						'controller' => 'users',
+						'action'     => 'register',
+					),
+					array('escape' => false)
+				)
+			);
+?>
+		</h2>
 		</li>
 		<li>
 		<img src="/img/common/icon_tri_gray.png">
-		<h2><a href="">ログイン</a></h2>
+		<h2>
+<?php
+			echo(
+				$this->Html->link(
+					'ログイン',
+					array(
+						'controller' => 'users',
+						'action'     => 'login',
+					),
+					array('escape' => false)
+				)
+			);
+?>
+		</h2>
 		</li>
 	</ul>
 	</div>
