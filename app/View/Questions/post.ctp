@@ -32,11 +32,11 @@
 		</div>
 		<div id="titleText">
 			<?php
-				echo $this->Form->create('Question');
-				echo $this->Form->text('questionTitle');
+				echo $this->Form->create('Question',array('type'=>'post','action'=>'post'));
+				echo $this->Form->text('Question.questionTitle',array('style'=>'width: 400px; height: 23px;'));
 			?>
 		</div>
-	<!--div#title-->
+	<!--div#questionTitle-->
 	</div>
 	
 	<div id="questionContent">
@@ -44,14 +44,16 @@
 			<p>本文</p>
 		</div>
 		<div id="contentText">
-			<?php echo $this->Form->text('questionContent'); ?>
+			<?php echo $this->Form->textarea('Question.questionContent',array('style'=>'width: 670px;','rows'=>'5')); ?>
 		</div>
-		<div id="postQuestionBtn">
-			<?php echo $this->Form->submit('../../img/qDetail/btn_post.png'); ?>
-		</div>	
-			<?php echo $this->Form->end(); ?>
+	<!--div#questionContent-->
 	</div>
 	
+	<div id="postQuestionBtn">
+			<?php echo $this->Form->submit('../../img/qDetail/btn_post.png'); ?>
+			<?php echo $this->Form->end(); ?>
+	</div>	
+		
 
 
 <!--div#mainColumn-->

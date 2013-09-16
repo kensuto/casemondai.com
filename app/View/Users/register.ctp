@@ -42,80 +42,63 @@
 	</div>
 </dl>
 
+
 <!--フォームここから-->
 <table id="form">
+	<?php echo $this->Form->create('User',array('type'=>'post','action'=>'register')); ?>
 	<tr>	
 		<th class="th">ユーザーネーム</th>
-		<td class="td"><input type="text" name="userName" class="textarea" maxlength="20" placeholder="半角英数字で3文字以上" ><span style="color: #535362; font-size: 10px;">&nbsp;&nbsp;※投稿に表示されます</span></td>
+		<td class="td"><?php echo $this->Form->text('User.name',array('maxlength'=>'20','placeholder'=>'半角英数字で3文字以上')); ?><span style="color: #535362; font-size: 10px;">&nbsp;&nbsp;※投稿に表示されます</span></td>
 	</tr>
-
 	<tr>		
 		<th class="th">メールアドレス</th>
-		<td class="td"><input type="email" name="mailAddress" class="textarea" maxlength="30" placeholder="sample@casemondai.com"></td>
+		<td class="td"><?php echo $this->Form->text('User.email',array('maxlength'=>'30','placeholder'=>'sample@casemondai.com')); ?></td>
 	</tr>
 	<tr>
 		<th class="th">パスワード</th>
-		<td class="td"><input type="password" name="password" class="textarea" maxlength="20" placeholder="半角英数字で6文字以上"></td>
+		<td class="td"><?php echo $this->Form->password('User.password',array('maxlength'=>'20','placeholder'=>'半角英数字で6文字以上')); ?></td>
 	</tr>
 	<tr>
 		<th class="th">生年月日</th>
 		<td class="td">
-			<select name="birthYear" class="selectbox">
-				<option value=""></option>
-				<option value=""></option>
-				<option value=""></option>
-			</select>
+			<?php echo $this->Form->year('User.birthday',2000,1970,array('empty'=>FALSE)); ?>
 				年
-			<select name="birthMonth" class="selectbox">
-				<option value=""></option>
-			</select>
+			<?php echo $this->Form->month('User.birthday',array('empty' => FALSE , 'monthNames' => FALSE)); ?>
+<!--年＋月＋日にしてDBに入れるのがわからん-->
 				月
-			<select name="birthDay">
-				<option value=""></option>
-			</select>
+			<?php echo $this->Form->day('User.birthday',array('empty' => FALSE , )); ?>
 				日
 		</td>
 	</tr>
 	<tr>
 		<th class="th">性別</th>
 		<td class="td">
-			<input type="radio" name="sex" value="male">&nbsp;男性&nbsp;&nbsp;　
-			<input type="radio" name="sex" value="female">&nbsp;女性
+			<?php echo $this->Form->radio('sex',array(' 男性',' 女性'),array('label'=>TRUE,'legend'=>FALSE,'separator'=>'　 ','value'=>'0')); ?>
 		</td>
 	</tr>
 	<tr>
 		<th class="th" id="lastSchool">最終学歴</th>
 		<td class="td">
-			<select name="graduateYear" class="selectbox">
-				<option value="2015">2015</option>
-				<option value=""></option>
-				<option value=""></option>
-				<option value=""></option>
-				<option value=""></option>
-			</select>
+			<?php echo $this->Form->year('User.grd_year',date('Y')+3,2000,array('empty' => FALSE)); ?>
 			年
-			<select name="graduateStatus" class="selectbox">
-				<option value="graduated">卒業</option>
-				<option value="expected">卒業見込み</option>	
-				<option value="dropout">中退</option>
-			</select>
+			<?php echo $this->Form->select('User.grd_status',array('卒業','卒業見込み','中退'),array('empty' => FALSE)); ?>
 			<br />
 			<br />
-			<input type="text" name="schoolName" class="textarea" id="schoolName" maxlength="20" placeholder="学校名"> 
-			<select name="schoolType" class="selectbox">
-				<option value="college">大学</option>
-				<option value="graduate">大学院</option>
-				<option value="juniorCollege">短期大学</option>
-				<option value="highSchool">高等学校・専門学校</option>
-			</select>
-			<input type="text" name="major" class="textarea" maxlength="30" placeholder="学部・専攻">
+			<?php echo $this->Form->text('User.school',array('maxlength'=>'30','placeholder'=>'学校名')); 
+				  echo $this->Form->select('User.school_type',array('大学','大学院','短期大学','高等学校・専門学校'),array('empty' => FALSE));
+				  echo $this->Form->text('User.major',array('maxlength'=>'30','placeholder'=>'学部・専攻'))
+			?>
 		</td>
 	</tr>
 	<tr>
 		<th class="th">お知らせ</th>
-		<td class="td"><input type="checkbox" name="optIn" value="on" checked="checked">&nbsp;&nbsp;お知らせメールを受信する</td>
+		<td class="td"><?php echo $this->Form->checkbox('User.optin',array('checked' => TRUE)); ?>&nbsp;&nbsp;お知らせメールを受信する</td>
 	</tr>
+	<?php echo $this->Form->end(); ?>
 </table>
+<!--フォームここまで-->
+
+
 
 <div id="mention"><a href="/" target="_blank">利用規約</a>と<a href="/" target="_blank">プライバシーポリシー</a>をご確認のうえ、「利用規約に同意して確認に進む」を押してください。</div>
 

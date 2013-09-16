@@ -54,14 +54,14 @@ Clearfix
 /* メインカラム */
 
 #mainColumn {
-	width: 710px;
+	width: 680px;
 	margin:0 30px 0 0;
 	float: left;
 }
 
 /* 右カラム */
 #rightColumn {
-	width: 	240px;
+	width: 	270px;
 	float: right;
 	background-color:#1681B2;
 }
@@ -94,7 +94,7 @@ parts
 
 /*オレンジ文字の見出し*/
 
-#headlineOrgH2 {
+#headlineOrgH3 {
 	font-size: 14px;
 	color: #FF9800;
 	margin-bottom: 10px;

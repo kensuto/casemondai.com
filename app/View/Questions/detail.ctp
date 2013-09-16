@@ -61,13 +61,13 @@
     
     <!--解答を投稿する-->
     <div id="postAnswer">
-        <p><h2 id="headlineOrgH2">解答を投稿する</h2></p>
+        <p><h3 id="headlineOrgH3">解答を投稿する</h3></p>
         
         <div id="postAnswerTextbox">
         <?php
         	echo $this->Form->create('Answer',array('action'=>'postAnswer'));
 //		 	echo $this->Form->create('Answer.questionId',array('type'=>'hidden','value'=>$detail['Question']['questionId']));
-			echo $this->Form->text('answer',array('style'=>'width:670px; height:80px;'));
+			echo $this->Form->textarea('answer',array('style'=>'width:670px;','rows'=>'5'));
 		?>
 		<div id="postAnswerBtn">
 			<?php echo $this->Form->submit('../../img/qDetail/btn_post.png'); ?>
@@ -81,7 +81,7 @@
     
     <!--他の人の回答を見る-->
     <div id="showAnswers">
-        <p><h2 id="headlineOrgH2">他の人の解答例を見る</h2></p>
+        <p><h3 id="headlineOrgH3">他の人の解答例を見る</h3></p>
         <div id="answer">
           <div id="answerHeader">
           	<div class="star">

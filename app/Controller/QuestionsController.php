@@ -65,9 +65,7 @@ class QuestionsController extends AppController {
 	 	public function detail($questionId = null) { //questionIdが設定されていなかったらnullで初期化する
 		if (!$questionId) { //questionIdが入っていなかったら、エラーを返す
 			throw new NotFoundException(_('Invalid post'));
-		}
-		
-		$this->set("title_for_layout","Index Page");//これでページタイトルを指定できるらしいができてない。
+		}	
 		$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.questionId' => $questionId ) ) );//questionIdでデータを検索して、$detailに入れる
 		$this->set('detail',$detail);//viewに$detailを渡している
 	

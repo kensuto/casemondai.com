@@ -73,13 +73,28 @@ debug( $user );
 //		$this->redirect( $this->Auth->logoutRedirect );
 	}
 
-	//kaiin touroku input.
+
+	/*====================
+		会員情報入力
+	 *====================*/
 	public function register() {
 	}
-	//kaiin touroku kakunin.
+
+
+
+	/*====================
+		会員情報確認
+	 *====================*/
+
 	public function register_confirm() {
 	}
-	//kaiin touroku kanryou.
+
+
+	/*====================
+		登録完了
+	 *====================*/
+
+
 	public function register_done() {
 	}
 }
