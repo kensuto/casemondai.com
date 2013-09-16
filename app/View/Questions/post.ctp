@@ -22,13 +22,36 @@
 <!--メインカラム-->
 <div id="mainColumn">
 
-       	  
-<?php
-	echo $this->Form->create('Question');
-	echo $this->Form->text('questionTitle');
-	echo $this->Form->text('questionContent');
-	echo $this->Form->end('投稿');
-?>
+	<div id="intro">
+		<p>あなたが投稿したケース問題に解答がつきます。</p>
+	</div>
+	
+	<div id="questionTitle">
+		<div id="title">
+			<p>タイトル</p>
+		</div>
+		<div id="titleText">
+			<?php
+				echo $this->Form->create('Question');
+				echo $this->Form->text('questionTitle');
+			?>
+		</div>
+	<!--div#title-->
+	</div>
+	
+	<div id="questionContent">
+		<div id="content">
+			<p>本文</p>
+		</div>
+		<div id="contentText">
+			<?php echo $this->Form->text('questionContent'); ?>
+		</div>
+		<div id="postQuestionBtn">
+			<?php echo $this->Form->submit('../../img/qDetail/btn_post.png'); ?>
+		</div>	
+			<?php echo $this->Form->end(); ?>
+	</div>
+	
 
 
 <!--div#mainColumn-->
