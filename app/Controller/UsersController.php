@@ -78,6 +78,7 @@ debug( $user );
 		会員情報入力
 	 *====================*/
 	public function register() {
+
 	}
 
 
