@@ -66,7 +66,7 @@ class QuestionsController extends AppController {
 		if (!$questionId) { //questionIdが入っていなかったら、エラーを返す
 			throw new NotFoundException(_('Invalid post'));
 		}	
-		$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.questionId' => $questionId ) ) );//questionIdでデータを検索して、$detailに入れる
+		$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.id' => $questionId ) ) );//questionIdでデータを検索して、$detailに入れる
 		$this->set('detail',$detail);//viewに$detailを渡している
 	
 	}//閉じ　function detail
@@ -95,16 +95,17 @@ class QuestionsController extends AppController {
 
 	public function post() {
 		if ($this->request->is('post')) {
+//			$id = $this->Auth->user('id');
 			$this->Question->save($this->request->data);
-			$last_id = $this->Question->getLastInsertID();
-			$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.questionId' => $last_id ) ) );//questionIdでデータを検索して、$detailに入れる
-			$this->set('detail',$detail);//viewに$detailを渡している
-			$this->redirect(array('controller' => 'questions', 'action' => 'detail', $detail['Question']['questionId']));
-			
-			} else {
+//			if ($res) {
+				$last_id = $this->Question->getLastInsertID();
+				$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.id' => $last_id ) ) );//questionIdでデータを検索して、$detailに入れる
+				$this->set('detail',$detail);//viewに$detailを渡している
+				$this->redirect(array('controller' => 'questions', 'action' => 'detail', $detail['Question']['id']));
+		//			}
+			}
 		}
 		
-	}
 	
 	
 }//閉じ　class QuestionsController extends AppController

@@ -34,7 +34,7 @@
 <dl id="merits">
 	<div class="merit">
 		<dt><img src="../../img/common/check.png"></dt>
-		<dd>例題に回答を投稿することができます。</dd>
+		<dd>例題に解答を投稿することができます。</dd>
 	</div>
 	<div class="merit">
 		<dt><img src="../../img/common/check.png"></dt>

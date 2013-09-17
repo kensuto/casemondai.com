@@ -33,7 +33,8 @@
 		<div id="titleText">
 			<?php
 				echo $this->Form->create('Question',array('type'=>'post','action'=>'post'));
-				echo $this->Form->text('Question.questionTitle',array('style'=>'width: 400px; height: 23px;'));
+				echo $this->Form->text('Question.title',array('style'=>'width: 400px; height: 23px;'));
+				echo $this->Form->error('Question.title');
 			?>
 		</div>
 	<!--div#questionTitle-->
@@ -44,7 +45,8 @@
 			<p>本文</p>
 		</div>
 		<div id="contentText">
-			<?php echo $this->Form->textarea('Question.questionContent',array('style'=>'width: 670px;','rows'=>'5')); ?>
+			<?php echo $this->Form->textarea('Question.content',array('style'=>'width: 670px;','rows'=>'5')); ?>
+			<?php echo $this->Form->error('Question.content'); ?>
 		</div>
 	<!--div#questionContent-->
 	</div>

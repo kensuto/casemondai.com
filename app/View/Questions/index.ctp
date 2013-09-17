@@ -29,8 +29,8 @@
 	<div class="question">
 		<div class="questionHeader" >
 			<div class="questionHeaderTitle">
-				<p><?php echo $this->Html->link($question['Question']['questionTitle'],
-				array('controller' => 'questions', 'action' => 'detail', $question['Question']['questionId'])); ?></p>
+				<p><?php echo $this->Html->link($question['Question']['title'],
+				array('controller' => 'questions', 'action' => 'detail', $question['Question']['id'])); ?></p>
 			</div>
 			<div class="questionHeaderCount">
 				<p>(<a href="">2件の回答</a>)</p>
@@ -43,7 +43,7 @@
 		<!--div.questionHeader-->
 		</div>
 		<div class="questionContent">
-			<p><?php echo $question['Question']['questionContent']; ?><?php echo $this->Html->link('･･･続きを読む',array('controller' => 'questions', 'action' => 'detail', $question['Question']['questionId'])); ?></p>
+			<p><?php echo $question['Question']['content']; ?><?php echo $this->Html->link('･･･続きを読む',array('controller' => 'questions', 'action' => 'detail', $question['Question']['id'])); ?></p>
 		<!--div.questionContent-->
 		</div>
 	</div>

@@ -12,7 +12,7 @@
 <!--パンくず-->
 <div id="pankuzu">
 	<p>
-		<a href="/">トップ</a>&nbsp;&nbsp;>&nbsp;&nbsp;<?php echo htmlspecialchars($detail['Question']['questionTitle']); ?>
+		<a href="/">トップ</a>&nbsp;&nbsp;>&nbsp;&nbsp;<?php echo htmlspecialchars($detail['Question']['title']); ?>
 	</p>
 </div>
 
@@ -34,7 +34,7 @@
 	<div id="question">
 		<div id="questionHeader">
 	    	<div id="questionHeaderTitle">
-			<h2 id="questionHeaderTitleH2"><?php echo htmlspecialchars($detail['Question']['questionTitle']); ?></h2>
+			<h2 id="questionHeaderTitleH2"><?php echo htmlspecialchars($detail['Question']['title']); ?></h2>
 			</div>
 			<div id="questionHeaderCount">
 	        （２件の回答）
@@ -43,12 +43,12 @@
 		</div>
 		
 		<div id="questionContent">
-		<?php echo htmlspecialchars($detail['Question']['questionContent']); ?>	
+		<?php echo htmlspecialchars($detail['Question']['content']); ?>	
 		<!--div#questionContent-->
 		</div>
 		
 		<div id="questionFooter">
-			<?php echo htmlspecialchars($detail['Question']['userId']); ?>
+			<?php echo htmlspecialchars($detail['Question']['user_id']); ?>
 			&nbsp;&nbsp;
 			<?php echo htmlspecialchars($detail['Question']['created']); ?>
 		<!--div#questionFooter-->
