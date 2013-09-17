@@ -97,12 +97,13 @@ class QuestionsController extends AppController {
 		if ($this->request->is('post')) {
 //			$id = $this->Auth->user('id');
 			$this->Question->save($this->request->data);
-//			if ($res) {
+			$res = $this->Question->save($this->request->data);
+			if ($res) {
 				$last_id = $this->Question->getLastInsertID();
 				$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.id' => $last_id ) ) );//questionIdでデータを検索して、$detailに入れる
 				$this->set('detail',$detail);//viewに$detailを渡している
 				$this->redirect(array('controller' => 'questions', 'action' => 'detail', $detail['Question']['id']));
-		//			}
+				}
 			}
 		}
 		
