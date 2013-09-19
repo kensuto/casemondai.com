@@ -99,3 +99,48 @@ parts
 	color: #FF9800;
 	margin-bottom: 10px;
 }
+
+/* ======================
+Form
+====================== */
+
+input[type=text] {
+	clear: both;
+	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+	padding: 1%;
+	height: 14px;
+}
+
+input[type=password] {
+	clear: both;
+	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+	padding: 1%;
+	height: 14px;
+}
+
+input[type=textarea] {
+	clear: both;
+	font-size: 110%;
+	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+	padding: 1%;
+}
+
+
+/* Form errors */
+form .error {
+	background: #FFDACC;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	font-weight: normal;
+}
+
+form .error-message {
+	background: none;
+	padding: 4px 0 0 4px;
+}
+
+form .error,
+form .error-message {
+	color: #FF9800;
+	}
