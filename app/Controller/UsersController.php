@@ -1,6 +1,5 @@
 <?php
-class UsersController extends AppController
-{
+class UsersController extends AppController {
 	var	$components = array('Auth');
  
 	function beforeFilter()
@@ -78,6 +77,18 @@ debug( $user );
 		会員情報入力
 	 *====================*/
 	public function register() {
+		if ($this->request->is('post')) {
+			$this->request->data['User']['grd_year'] = $this->request->data['User']['grd_year']['year']; //なぜかpostしたgrd_yearが配列で出力されるので、単体で代入
+			$this->User->save($this->request->data);
+			$res = $this->User->save($this->request->data);
+				if ($res) {
+						$last_id = $this->User->getLastInsertID();
+						$confirm = $this->User->find( 'first', array( 'conditions' => array( 'User.id' => $last_id ) ) );//user_idでデータを検索して代入
+						$this->set('confirm',$confirm);//viewに渡している
+						$this->redirect(array('controller' => 'user', 'action' => 'register_confirm'));
+				}
+			
+		}
 
 	}
 
@@ -88,6 +99,12 @@ debug( $user );
 	 *====================*/
 
 	public function register_confirm() {
+		if (!$confirm){
+			throw new NotFoundException(_('Invalid post'));
+		}
+	//		$user = $this->User->find( 'first', array( 'conditions' => array( 'User.id' => $last_id ) ) );
+		//	$this->set('user',$user);//viewに渡している
+	
 	}
 
 
@@ -98,4 +115,8 @@ debug( $user );
 
 	public function register_done() {
 	}
-}
+
+
+}//閉じ　class UsersController extends AppController
+
+?>

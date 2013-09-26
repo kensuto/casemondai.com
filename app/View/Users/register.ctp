@@ -64,7 +64,6 @@
 			<?php echo $this->Form->year('User.birthday',2000,1970,array('empty'=>FALSE)); ?>
 				年
 			<?php echo $this->Form->month('User.birthday',array('empty' => FALSE , 'monthNames' => FALSE)); ?>
-<!--年＋月＋日にしてDBに入れるのがわからん-->
 				月
 			<?php echo $this->Form->day('User.birthday',array('empty' => FALSE , )); ?>
 				日
@@ -86,7 +85,7 @@
 			<br />
 			<?php echo $this->Form->text('User.school',array('maxlength'=>'30','placeholder'=>'学校名')); 
 				  echo $this->Form->select('User.school_type',array('大学','大学院','短期大学','高等学校・専門学校'),array('empty' => FALSE));
-				  echo $this->Form->text('User.major',array('maxlength'=>'30','placeholder'=>'学部・専攻'))
+				  echo $this->Form->text('User.major',array('maxlength'=>'30','placeholder'=>'学部・専攻'));
 			?>
 		</td>
 	</tr>
@@ -94,17 +93,27 @@
 		<th class="th">お知らせ</th>
 		<td class="td"><?php echo $this->Form->checkbox('User.optin',array('checked' => TRUE)); ?>&nbsp;&nbsp;お知らせメールを受信する</td>
 	</tr>
-	<?php echo $this->Form->end(); ?>
 </table>
+
+
+	<div id="mention"><a href="/" target="_blank">利用規約</a>と<a href="/" target="_blank">プライバシーポリシー</a>をご確認のうえ、「利用規約に同意して確認に進む」を押してください。</div>
+	
+	<div id="btnReg1">
+	<?php 
+		echo $this->Form->submit("../../img/registar/btnReg1.png");
+	?>
+	</div>
+	<?php
+		echo $this->Form->end(); 
+	?>
+
 <!--フォームここまで-->
 
 
 
-<div id="mention"><a href="/" target="_blank">利用規約</a>と<a href="/" target="_blank">プライバシーポリシー</a>をご確認のうえ、「利用規約に同意して確認に進む」を押してください。</div>
 
-<div id="btnReg1">
-	<input type="image" src="../../img/registar/btnReg1.png" alt="利用規約に同意して確認に進む">
-</div>
+
+
 
 <!--div#main-->
 </div>
