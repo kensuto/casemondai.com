@@ -1,6 +1,7 @@
 <?php
 class UsersController extends AppController {
 	var	$components = array('Auth');
+	var $helpers = array('FormHidden');
  
 	function beforeFilter()
 	{
@@ -89,13 +90,16 @@ debug( $user );
 	 *====================*/
 
 	public function register_confirm() {
-		if ($this->request->is('post')) {
-			$this->request->data['User']['grd_year'] = $this->request->data['User']['grd_year']['year']; //なぜかpostしたgrd_yearが配列で出力されるので、単体で代入
+		if ($this->request->is('post')) {		
+			//debug($this->request->data);
+		//	$birthday = $this->request->data['User']['birthday']; 
+		//	Model::$this->deconstruct( 'birthday' , $birthday );
 			$user = $this->request->data;	
 			$this->set('user',$user);
-		}
+			}
 	}
 			
+	
 	
 
 
@@ -104,18 +108,26 @@ debug( $user );
 	 *====================*/
 
 	public function register_done() {
-					$this->User->save($this->request->data);
+		if ($this->request->is('post')) {	
+			
+			debug($this->request->data);
+			$this->request->data['User']['grd_year'] = $this->request->data['User']['grd_year']['year']; //なぜかpostしたgrd_yearが配列で出力されるので、単体で代入
+			
+			$this->User->save($this->request->data);
+			/*
 			$res = $this->User->save($this->request->data);
 				if ($res) {
 						$last_id = $this->User->getLastInsertID();
 						$confirm = $this->User->find( 'first', array( 'conditions' => array( 'User.id' => $last_id ) ) );//user_idでデータを検索して代入
 						$this->set('confirm',$confirm);//viewに渡している
-						$this->redirect(array('controller' => 'user', 'action' => 'register_confirm'));
+						$this->redirect(array('controller' => 'users', 'action' => 'register_confirm'));
 				}	
+				*/
 	}
 
 
 }//閉じ　class UsersController extends AppController
 
+}
 
 ?>

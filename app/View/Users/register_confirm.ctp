@@ -36,10 +36,13 @@
 	
 <!--フォームここから-->
 
+<?php debug($user); ?>
+
 
 <table id="form">
 	<?php echo $this->Form->create('User',array('type'=>'post','action'=>'register_done')); ?>
-	<tr>	
+	<?php echo $this->formhidden->hiddenVars('User'); ?>
+    <tr>	
 		<th class="th">ユーザーネーム</th>
 		<td class="td">
 			<?php echo $this->Form->value('User.name'); ?>
@@ -61,8 +64,8 @@
 	<tr>
 		<th class="th">生年月日</th>
 		<td class="td">
-			<?php echo $this->Form->value('User.birthday'); ?>
-		</td>
+        	<?php echo $this->Form->Value('User.birthday'); ?>
+    	</td>
 	</tr>
 	<tr>
 		<th class="th">性別</th>
@@ -73,7 +76,7 @@
 	<tr>
 		<th class="th" id="lastSchool">最終学歴</th>
 		<td class="td">
-			<?php echo $this->Form->value('User.grd_year'); ?>
+			<?php echo $user['User']['grd_year']['year']; ?>
 		年
 			<?php echo $this->Form->value('User.grd_status'); ?>
 			<br />

@@ -30,5 +30,14 @@ class User extends AppModel {
         }
         return true;
     }
+	
+	/*deconstruct関数をModelに書かなきゃいけないんだけど書き方がわからない*/
+	
+	public function register_confirm() {
+		$birthday = $this->request->data['User']['birthday']; 
+		$this->deconstruct( 'birthday' , $birthday );
+
+	}
+	
 }
 ?>
