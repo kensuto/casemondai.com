@@ -45,7 +45,7 @@
 
 <!--フォームここから-->
 <table id="form">
-	<?php echo $this->Form->create('User',array('type'=>'post','action'=>'register')); ?>
+	<?php echo $this->Form->create('User',array('type'=>'post','action'=>'register_confirm')); ?>
 	<tr>	
 		<th class="th">ユーザーネーム</th>
 		<td class="td"><?php echo $this->Form->text('User.name',array('maxlength'=>'20','placeholder'=>'半角英数字で3文字以上')); ?><span style="color: #535362; font-size: 10px;">&nbsp;&nbsp;※投稿に表示されます</span></td>

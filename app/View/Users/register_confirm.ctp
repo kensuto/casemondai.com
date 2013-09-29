@@ -36,45 +36,65 @@
 	
 <!--フォームここから-->
 
+
 <table id="form">
+	<?php echo $this->Form->create('User',array('type'=>'post','action'=>'register_done')); ?>
 	<tr>	
 		<th class="th">ユーザーネーム</th>
-		<td class="td">まっち</td>
+		<td class="td">
+			<?php echo $this->Form->value('User.name'); ?>
+		</td>
 	</tr>
 
 	<tr>		
 		<th class="th">メールアドレス</th>
-		<td class="td">mkayokom@gmail.com</td>
+		<td class="td">
+			<?php echo $this->Form->value('User.email'); ?>
+		</td>
 	</tr>
 	<tr>
 		<th class="th">パスワード</th>
-		<td class="td">**********</td>
+		<td class="td">
+			<?php echo $this->Form->value('User.password'); ?>
+		</td>
 	</tr>
 	<tr>
 		<th class="th">生年月日</th>
-		<td class="td">1987年7月12日</td>
+		<td class="td">
+			<?php echo $this->Form->value('User.birthday'); ?>
+		</td>
 	</tr>
 	<tr>
 		<th class="th">性別</th>
-		<td class="td">女性</td>
+		<td class="td">
+			<?php echo $this->Form->value('User.sex'); ?>
+		</td>
 	</tr>
 	<tr>
 		<th class="th" id="lastSchool">最終学歴</th>
 		<td class="td">
-			2011年　卒業
+			<?php echo $this->Form->value('User.grd_year'); ?>
+		年
+			<?php echo $this->Form->value('User.grd_status'); ?>
 			<br />
-			青山学院大学　経営学部経営学科
+			<?php echo $this->Form->value('User.school'); ?>
+			<?php echo $this->Form->value('User.major'); ?>
 		</td>
 	</tr>
 	<tr>
 		<th class="th">お知らせ</th>
-		<td class="td">お知らせメールを受信する</td>
+		<td class="td">
+			<?php echo $this->Form->value('User.optin'); ?>
+		</td>
 	</tr>
 </table>
 
 
 <div id="btnReg2">
-	<input type="image" src="../../img/registar/btnReg2.png" alt="上記の内容で登録する">
+	<?php 
+		echo $this->Form->submit("../../img/registar/btnReg2.png");
+		echo $this->Form->end(); 
+	?>
 </div>
 
 <!--div#main-->
