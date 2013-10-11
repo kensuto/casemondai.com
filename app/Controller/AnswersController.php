@@ -47,6 +47,7 @@ class AnswersController extends AppController {
 	public $uses = array();
 	
 	
+	
 	/*====================
 	   解答投稿のアクション
 	 ====================*/
