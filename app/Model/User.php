@@ -5,7 +5,7 @@ class User extends AppModel {
     public $validate = Array(
         'email' => Array(
             'required' => Array(
-                'rule' => Array('notEmpty'),
+                'rule' => Array('notEmpty', 'email'),
                 'message' => 'メールアドレスを入力してください。'
             )
         ),

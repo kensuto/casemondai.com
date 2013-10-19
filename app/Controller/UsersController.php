@@ -5,7 +5,13 @@ class UsersController extends AppController {
  
 	function beforeFilter()
 	{
-
+		parent::beforeFilter();
+		$this->Auth->allow(
+			'register',
+			'register_confirm',
+			'register_done'
+		);
+/*
 		$this->Auth->authenticate = array('Facebook');
 
 		$this->Auth->allow( 
@@ -21,7 +27,7 @@ class UsersController extends AppController {
 		$this->Auth->logoutRedirect = '/';
 		$this->Auth->loginError = 'ユーザ名もしくはパスワードに誤りがあります';
 		$this->Auth->authError = 'アクセス権限がありません。';
-
+*/
  
 		parent::beforeFilter();
 	}
@@ -78,7 +84,7 @@ debug( $user );
 		会員情報入力
 	 *====================*/
 	public function register() {
-			
+			//会員登録フォームを表示するだけ
 		}
 
 	
@@ -90,10 +96,10 @@ debug( $user );
 	 *====================*/
 
 	public function register_confirm() {
-		if ($this->request->is('post')) {		
-			//debug($this->request->data);
-		//	$birthday = $this->request->data['User']['birthday']; 
-		//	Model::$this->deconstruct( 'birthday' , $birthday );
+		if ($this->request->is('post')) {
+//debug($this->request->data);
+			//	$birthday = $this->request->data['User']['birthday']; 
+			//	Model::$this->deconstruct( 'birthday' , $birthday );
 			$user = $this->request->data;	
 			$this->set('user',$user);
 			}
@@ -109,10 +115,8 @@ debug( $user );
 
 	public function register_done() {
 		if ($this->request->is('post')) {	
-			
 			debug($this->request->data);
 			$this->request->data['User']['grd_year'] = $this->request->data['User']['grd_year']['year']; //なぜかpostしたgrd_yearが配列で出力されるので、単体で代入
-			
 			$this->User->save($this->request->data);
 			/*
 			$res = $this->User->save($this->request->data);

@@ -1,5 +1,6 @@
 
 <?php
+	$user_profile_lang = Configure::read( "User" );
 	echo $this->Html->css('user/register_confirm'); 
 ?>
 
@@ -36,7 +37,7 @@
 	
 <!--フォームここから-->
 
-<?php debug($user); ?>
+<?php //debug($user); ?>
 
 
 <table id="form">
@@ -64,30 +65,34 @@
 	<tr>
 		<th class="th">生年月日</th>
 		<td class="td">
-        	<?php echo $this->Form->Value('User.birthday'); ?>
+			<?php echo( $this->Form->Value('User.birthday')['year'] ); ?>年
+			<?php echo( $this->Form->Value('User.birthday')['month'] ); ?>月
+			<?php echo( $this->Form->Value('User.birthday')['day'] ); ?>日
     	</td>
 	</tr>
 	<tr>
 		<th class="th">性別</th>
 		<td class="td">
-			<?php echo $this->Form->value('User.sex'); ?>
+			<?php 
+				echo $user_profile_lang['sex'][$this->Form->value('User.sex')]; 
+			?>
 		</td>
 	</tr>
 	<tr>
 		<th class="th" id="lastSchool">最終学歴</th>
 		<td class="td">
-			<?php echo $user['User']['grd_year']['year']; ?>
-		年
-			<?php echo $this->Form->value('User.grd_status'); ?>
+			<?php echo $user['User']['grd_year']['year']; ?>年
+			<?php echo $user_profile_lang['grd_status'][$this->Form->value('User.grd_status')]; ?>
 			<br />
 			<?php echo $this->Form->value('User.school'); ?>
+			<?php echo $user_profile_lang['school_type'][$this->Form->value('User.school_type')]; ?>
 			<?php echo $this->Form->value('User.major'); ?>
 		</td>
 	</tr>
 	<tr>
 		<th class="th">お知らせ</th>
 		<td class="td">
-			<?php echo $this->Form->value('User.optin'); ?>
+			<?php echo $user_profile_lang['optin'][$this->Form->value('User.optin')]; ?>
 		</td>
 	</tr>
 </table>
