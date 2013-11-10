@@ -115,8 +115,12 @@ debug( $user );
 
 	public function register_done() {
 		if ($this->request->is('post')) {	
-			debug($this->request->data);
+//			debug($this->request->data);
+			//卒業年
 			$this->request->data['User']['grd_year'] = $this->request->data['User']['grd_year']['year']; //なぜかpostしたgrd_yearが配列で出力されるので、単体で代入
+			//誕生日形式修正
+			$this->request->data['User']['birthday'] = implode( '-', $this->request->data['User']['birthday'] );
+
 			$this->User->save($this->request->data);
 			/*
 			$res = $this->User->save($this->request->data);

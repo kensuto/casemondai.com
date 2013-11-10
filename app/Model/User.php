@@ -15,6 +15,12 @@ class User extends AppModel {
                 'message' => 'パスワードを入力してください。'
             )
         ),
+        'birthday' => Array(
+            'required' => Array(
+                'rule' => Array('notEmpty'),
+                'message' => '生年月日を入力してください。'
+            )
+        ),
         'role' => Array(
             'valid' => Array(
                 'rule' => Array('inList', Array('admin', 'staff', 'author')),
