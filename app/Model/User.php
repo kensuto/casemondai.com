@@ -5,7 +5,7 @@ class User extends AppModel {
     public $validate = Array(
         'email' => Array(
             'required' => Array(
-                'rule' => Array('notEmpty'),
+                'rule' => Array('notEmpty', 'email'),
                 'message' => 'メールアドレスを入力してください。'
             )
         ),
@@ -13,6 +13,12 @@ class User extends AppModel {
             'required' => Array(
                 'rule' => Array('notEmpty'),
                 'message' => 'パスワードを入力してください。'
+            )
+        ),
+        'birthday' => Array(
+            'required' => Array(
+                'rule' => Array('notEmpty'),
+                'message' => '生年月日を入力してください。'
             )
         ),
         'role' => Array(
@@ -30,5 +36,14 @@ class User extends AppModel {
         }
         return true;
     }
+	
+	/*deconstruct関数をModelに書かなきゃいけないんだけど書き方がわからない*/
+	
+	public function register_confirm() {
+		$birthday = $this->request->data['User']['birthday']; 
+		$this->deconstruct( 'birthday' , $birthday );
+
+	}
+	
 }
 ?>
