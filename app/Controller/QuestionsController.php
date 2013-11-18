@@ -72,24 +72,7 @@ class QuestionsController extends AppController {
 			$this->set('answers',$answers);	
 			}		
 	}//閉じ　function detail
-	
-	
-	
-	
-	/*====================
-	   解答投稿のアクション
-	 ====================*/
-	 
-	public function postAnswer() {
-		//post時の処理
-		if ($this->request->is('post')) {
-			$this->Answer->save($this->request->data);
-			
-		}
-	}//閉じ　function detail
-	
-	
-	
+		
 	
 	/*====================
 	 	問題投稿のアクション

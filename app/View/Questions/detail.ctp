@@ -12,7 +12,7 @@
 <!--パンくず-->
 <div id="pankuzu">
 	<p>
-		<a href="/">トップ</a>&nbsp;&nbsp;>&nbsp;&nbsp;<a href="/questions/">問題一覧</a>&nbsp;&nbsp;>&nbsp;&nbsp;<?php echo htmlspecialchars($question['Question']['title']); ?>
+		<a href="/">トップ</a>&nbsp;&nbsp;>&nbsp;&nbsp;<a href="/questions/">ケース問題一覧</a>&nbsp;&nbsp;>&nbsp;&nbsp;<?php echo htmlspecialchars($question['Question']['title']); ?>
 	</p>
 </div>
 
@@ -64,19 +64,18 @@
         <p><h3 id="headlineOrgH3">解答を投稿する</h3></p>
         
         <div id="postAnswerTextbox">
-        <?php
-        	echo $this->Form->create('Answer',array('action'=>'postAnswer'));
-//		 	echo $this->Form->create('Answer.questionId',array('type'=>'hidden','value'=>$question['Question']['questionId']));
+<?php
+        	echo $this->Form->create('Answer',array('type'=>'post','action'=>'postAnswer'));
 			echo $this->Form->textarea('answer',array('style'=>'width:670px;','rows'=>'5'));
-		?>
+?>
 		<div id="postAnswerBtn">
 			<?php echo $this->Form->submit('../../img/qDetail/btn_post.png'); ?>
 		</div>	
 			<?php echo $this->Form->end(); ?>
 		</div>
-        
     <!--div#postAnswer-->
     </div>
+    
     
     
     <!--他の人の回答を見る-->
@@ -90,8 +89,10 @@
 					$answer = $answers[$i]['Answer'];
 ?>
         	<div class="answer">
-						<div class="answerHeder">
-							<?php echo $answer['user_id']; ?>
+						<div class="answerHeader">
+							<div class="answerName">
+								<?php echo $answer['user_id']; ?>
+							</div>
 							<div class="answerCreated">
 								<?php echo $answer['created']; ?>
 							</div>			

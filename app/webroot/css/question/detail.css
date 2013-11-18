@@ -73,6 +73,11 @@
 	margin-bottom: 10px;
 }
 
+.answerName {
+	float: left;
+	font-weight: bold;
+}
+
 .answerCreated {
 	text-align: right;
 }
