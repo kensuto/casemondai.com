@@ -61,29 +61,12 @@
 	<tr>
 		<th class="th">生年月日</th>
 		<td class="td">
-			<?php 
-				echo $this->Form->datetime(
-									'User.birthday', 
-									'YMD', 
-									'NONE',
-									array( 
-										"value"		=> array(
-											"day"		=> "01",
-											"month"		=> "01",
-											"year"		=> date('Y') - 10,
-										),
-										"empty"		=> array(
-											"day"		=> false,
-											"month"		=> false,
-											"year"		=> false,
-										),
-										'minYear'	=> date('Y') - 60,
-										'maxYear'	=> date('Y') - 10,
-										'separator'	=> array( '年', '月', '日' ),
-										'monthNames'=> false
-									)
-				); 
-			?>
+			<?php echo $this->Form->year('User.birthday',2000,1970,array('empty'=>FALSE)); ?>
+				年
+			<?php echo $this->Form->month('User.birthday',array('empty' => FALSE , 'monthNames' => FALSE)); ?>
+				月
+			<?php echo $this->Form->day('User.birthday',array('empty' => FALSE , )); ?>
+				日
 		</td>
 	</tr>
 	<tr>
@@ -95,7 +78,7 @@
 	<tr>
 		<th class="th" id="lastSchool">最終学歴</th>
 		<td class="td">
-			<?php echo $this->Form->year('User.grd_year',date('Y')+3,date('Y')-60,array('empty' => FALSE)); ?>
+			<?php echo $this->Form->year('User.grd_year',date('Y')+3,2000,array('empty' => FALSE)); ?>
 			年
 			<?php echo $this->Form->select('User.grd_status',array('卒業','卒業見込み','中退'),array('empty' => FALSE)); ?>
 			<br />

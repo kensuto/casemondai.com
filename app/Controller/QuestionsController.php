@@ -44,7 +44,7 @@ class QuestionsController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Question','Answer');
+	public $uses = array();
 	
 	
 	/*====================
@@ -63,16 +63,31 @@ class QuestionsController extends AppController {
 	 ====================*/
 
 	 	public function detail($questionId = null) { //questionIdが設定されていなかったらnullで初期化する
-			if (!$questionId) { //questionIdが入っていなかったら、エラーを返す
-				throw new NotFoundException(_('Invalid post'));
-			}	else  {
-			$question = $this->Question->find( 'first', array( 'conditions' => array( 'Question.id' => $questionId ) ) );//questionIdでデータを検索して、$detailに入れる
-			$this->set('question',$question);//viewに$questionを渡している
-			$answers = $this->Answer->find('all', array('conditions' => array('Answer.question_id' => $questionId )));
-			$this->set('answers',$answers);	
-			}		
+		if (!$questionId) { //questionIdが入っていなかったら、エラーを返す
+			throw new NotFoundException(_('Invalid post'));
+		}	
+		$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.id' => $questionId ) ) );//questionIdでデータを検索して、$detailに入れる
+		$this->set('detail',$detail);//viewに$detailを渡している
+	
 	}//閉じ　function detail
-		
+	
+	
+	
+	
+	/*====================
+	   解答投稿のアクション
+	 ====================*/
+	 
+	public function postAnswer() {
+		//post時の処理
+		if ($this->request->is('post')) {
+			$this->Answer->save($this->request->data);
+			
+		}
+	}//閉じ　function detail
+	
+	
+	
 	
 	/*====================
 	 	問題投稿のアクション
