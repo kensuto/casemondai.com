@@ -44,7 +44,7 @@ class AnswersController extends AppController {
  *
  * @var array
  */
-	public $uses = array();
+	public $uses = array('Question','Answer');
 	
 	
 	
@@ -52,14 +52,16 @@ class AnswersController extends AppController {
 	   解答投稿のアクション
 	 ====================*/
 	 
-	public function postAnswer() {
+	public function postAnswer($questionId = null) {
+		if (!$questionId) { //questionIdが入っていなかったら、エラーを返す
+			throw new NotFoundException(_('Invalid post'));
+			return( false );
+		}
 		//post時の処理
 		if ($this->request->is('post')) {
-			$questionId = $question['Question']['id'];
+			$this->request->data['Answer']['question_id'] = $questionId;
 			$this->Answer->save($this->request->data);	
-			$question = $this->Question->find( 'first', array( 'conditions' => array( 'Question.questionId' => $question['question']['id'] ) ) );//questionIdでデータを検索して、$detailに入れる
-			$this->set('question',$question);//viewに渡している
-			$this->redirect(array('controller' => 'questions', 'action' => 'detail', $question['Question']['questionId']));
+			$this->redirect(array('controller' => 'questions', 'action' => 'detail', $questionId));
 		}
 	}//閉じ　function detail
 	

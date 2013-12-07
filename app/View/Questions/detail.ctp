@@ -34,27 +34,16 @@
 	<div id="question">
 		<div id="questionHeader">
 	    	<div id="questionHeaderTitle">
-<<<<<<< HEAD
-				<h2 id="questionHeaderTitleH2"><?php echo htmlspecialchars($detail['Question']['title']); ?></h2>
-			</div>
-			<div id="questionHeaderCount">
-	        	（２件の回答）
-=======
 				<h2 id="questionHeaderTitleH2"><?php echo htmlspecialchars($question['Question']['title']); ?></h2>
 			</div>
 			<div id="questionHeaderCount">
 	        	<p>(<a href="#showAnswers"><?php echo count($answers); ?>件の回答</a>）</p>
->>>>>>> 3802c9aab5c81968f45147aaedcf7d72a9180eb1
 	        </div>
 		<!--div#questionHeader-->
 		</div>
 		
 		<div id="questionContent">
-<<<<<<< HEAD
-			<?php echo htmlspecialchars($detail['Question']['content']); ?>	
-=======
 		<?php echo htmlspecialchars($question['Question']['content']); ?>	
->>>>>>> 3802c9aab5c81968f45147aaedcf7d72a9180eb1
 		<!--div#questionContent-->
 		</div>
 		
@@ -76,7 +65,7 @@
         
         <div id="postAnswerTextbox">
 <?php
-        	echo $this->Form->create('Answer',array('type'=>'post','action'=>'postAnswer'));
+        	echo $this->Form->create('Answer',array('type'=>'post','action'=>'postAnswer/'.$question['Question']['id'] ) );
 			echo $this->Form->textarea('answer',array('style'=>'width:670px;','rows'=>'5'));
 ?>
 		<div id="postAnswerBtn">

@@ -62,15 +62,15 @@ class QuestionsController extends AppController {
 	   	問題詳細のアクション
 	 ====================*/
 
-	 	public function detail($questionId = null) { //questionIdが設定されていなかったらnullで初期化する
-			if (!$questionId) { //questionIdが入っていなかったら、エラーを返す
-				throw new NotFoundException(_('Invalid post'));
-			}	else  {
+	public function detail($questionId = null) { //questionIdが設定されていなかったらnullで初期化する
+		if (!$questionId) { //questionIdが入っていなかったら、エラーを返す
+			throw new NotFoundException(_('Invalid post'));
+		}	else  {
 			$question = $this->Question->find( 'first', array( 'conditions' => array( 'Question.id' => $questionId ) ) );//questionIdでデータを検索して、$detailに入れる
 			$this->set('question',$question);//viewに$questionを渡している
 			$answers = $this->Answer->find('all', array('conditions' => array('Answer.question_id' => $questionId )));
 			$this->set('answers',$answers);	
-			}		
+		}		
 	}//閉じ　function detail
 		
 	
