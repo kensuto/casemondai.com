@@ -47,6 +47,7 @@ class AnswersController extends AppController {
 	public $uses = array();
 	
 	
+	
 	/*====================
 	   解答投稿のアクション
 	 ====================*/
@@ -54,12 +55,11 @@ class AnswersController extends AppController {
 	public function postAnswer() {
 		//post時の処理
 		if ($this->request->is('post')) {
+			$questionId = $question['Question']['id'];
 			$this->Answer->save($this->request->data);	
-			$questionId = $this->question->
-			$detail = $this->Question->find( 'first', array( 'conditions' => array( 'Question.questionId' => $detail ) ) );//questionIdでデータを検索して、$detailに入れる
-			$this->set('detail',$detail);//viewに$detailを渡している
-			$this->redirect(array('controller' => 'questions', 'action' => 'detail', $detail['Question']['questionId']));
-			
+			$question = $this->Question->find( 'first', array( 'conditions' => array( 'Question.questionId' => $question['question']['id'] ) ) );//questionIdでデータを検索して、$detailに入れる
+			$this->set('question',$question);//viewに渡している
+			$this->redirect(array('controller' => 'questions', 'action' => 'detail', $question['Question']['questionId']));
 		}
 	}//閉じ　function detail
 	

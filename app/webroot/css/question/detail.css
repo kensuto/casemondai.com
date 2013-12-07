@@ -18,14 +18,14 @@
 	float: left;
 }
 
-#questionHeaderTitleH2 {
+#questionHeaderTitleH1 {
 	font-size: 16px;
 	font-weight: bold;
 }
 
 #questionHeaderCount {
 	font-size: 10px;
-	color: #999;
+	color: #1681b2;
 }
 
 #questionContent {
@@ -36,6 +36,9 @@
 #questionFooter {
 	text-align: right;
 }
+
+
+/* 解答を投稿 */
 
 
 #postAnswer {
@@ -49,22 +52,33 @@
 	margin-top: 10px;
 }
 
+/* 他の人の解答を見る　*/
+
 #showAnswers {
 	width: 680px;
-	margin-top: 30px;
+	margin: 30px 0 70px 0;
 }
 
-#answer {
+.answer {
 	border: outset 1px #ECECFB;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;    /* 角丸　Safari,Google Chrome用 */  
     -moz-border-radius: 8px;   /* 角丸　Firefox用 */ 
 	padding: 20px 30px 30px 30px;
-	margin-top: 10px;
+	margin: 10px 0 20px 0;
 }
 
-#answerHeader {
+.answerHeader {
 	text-align: right;
 	margin-bottom: 10px;
+}
+
+.answerName {
+	float: left;
+	font-weight: bold;
+}
+
+.answerCreated {
+	text-align: right;
 }
 
