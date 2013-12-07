@@ -34,16 +34,16 @@
 	<div id="question">
 		<div id="questionHeader">
 	    	<div id="questionHeaderTitle">
-			<h2 id="questionHeaderTitleH2"><?php echo htmlspecialchars($detail['Question']['title']); ?></h2>
+				<h2 id="questionHeaderTitleH2"><?php echo htmlspecialchars($detail['Question']['title']); ?></h2>
 			</div>
 			<div id="questionHeaderCount">
-	        （２件の回答）
+	        	（２件の回答）
 	        </div>
 		<!--div#questionHeader-->
 		</div>
 		
 		<div id="questionContent">
-		<?php echo htmlspecialchars($detail['Question']['content']); ?>	
+			<?php echo htmlspecialchars($detail['Question']['content']); ?>	
 		<!--div#questionContent-->
 		</div>
 		
