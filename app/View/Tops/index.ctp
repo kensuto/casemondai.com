@@ -42,9 +42,9 @@
 			</p>
 		</div>
 	</div>
-	<div class="mainContentQuestion">
-	
-	<?php foreach ($new_answers as $new_answer): ?>
+
+	<?php foreach ($new_answers as $new_answer): ?>	
+	<div class="mainContentQuestion">	
 		<div class="mainContentQuestionTitle">
 			<p class="title">
 				<img src="/img/common/icon_tri_gray.png" >
@@ -66,10 +66,10 @@
 				
 			</p>
 		</div>
-	<?php endforeach; ?>
-		
 	<!--mainContentQuestion-->
 	</div>
+	<?php endforeach; ?>		
+	
 
 <!--mainContent-->
 </div>
