@@ -20,6 +20,35 @@ class Answer extends AppModel {
 		}
 		return( $ans_counts );
 	}
-}
+	
+	
+	public function top()
+	{
+		$params = array(
+			'fields' => array( 'Answer.created', 'Question.title', 'Answer.answer', 'User.name','Question.id'),
+			'joins' => array( 
+				array(
+					'table' => 'questions',
+					'alias' => 'Question',
+ 					'type' => 'LEFT',
+					'conditions' => array( 'Question.id=Answer.question_id')
+				),
+				array(
+					'table' => 'users',
+					'alias' => 'User',
+					'type' => 'LEFT',
+					'conditions' => array( 'User.id=Answer.user_id' )
+				)
+			),
+			'order' => array( 'Answer.created DESC'),
+			'limit' => 5,
+		);
+		$res = $this->find( 'all', $params );
+//		debug( $res );
+		return( $res );
 
+	}
+		
+	
+}
 ?>

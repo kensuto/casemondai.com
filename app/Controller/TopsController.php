@@ -43,10 +43,10 @@ class TopsController extends AppController {
  *
  * @var array
  */
-	public $uses = array();
+	public $uses = array('Question','Answer','User');
+
 
 	public function index() {
-	$this->set('questions',$this->Question->find('all'));
-
+		$this->set( 'new_answers', $this->Answer->top() );
 	}
 }

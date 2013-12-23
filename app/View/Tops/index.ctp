@@ -43,26 +43,30 @@
 		</div>
 	</div>
 	<div class="mainContentQuestion">
-		
+	
+	<?php foreach ($new_answers as $new_answer): ?>
 		<div class="mainContentQuestionTitle">
 			<p class="title">
 				<img src="/img/common/icon_tri_gray.png" >
 				<a href="/">
-					&nbsp;ここに質問のタイトルが入ります。
+					<?php echo $new_answer['Question']['title']; ?>
 				</a>
 			</p>
 			<p class="date">2013.8.2 20:59</p>
-			<p class="id">ID:mkayokom</p>
+			<p class="id">
+				ID:<?php echo $new_answer['User']['name']; ?>
+			</p>
 		</div>
 		
 		<div class="mainContentQuestionContent">
 			<p class="question">
-				ここに質問の内容が入ります。ここに質問の内容が入ります。ここに質問の内容が入ります。ここに質問の内容が入ります。ここに質問の内容が入ります。ここに質問の内容が入ります。ここに質問の内容が入ります。ここに質問の内容が入ります。ここに質問の内容が入ります。ここに質問の内容が入ります。
-				<a href="/">
-					・・・続きを読む
-				</a>
+				<?php echo $new_answer['Answer']['answer']; ?>
+				<?php echo $this->Html->link('・・・続きを読む',
+				array('controller' => 'questions', 'action' => 'detail', $new_answer['Question']['id'])); ?>					
+				
 			</p>
 		</div>
+	<?php endforeach; ?>
 		
 	<!--mainContentQuestion-->
 	</div>
@@ -74,5 +78,8 @@
 <div id="sideContent">
 <!--sideContent-->
 </div>
+
+
+
 
 

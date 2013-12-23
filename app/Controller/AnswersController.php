@@ -44,7 +44,7 @@ class AnswersController extends AppController {
  *
  * @var array
  */
-	public $uses = array('Question','Answer');
+	public $uses = array('Question','Answer','User');
 	
 	
 	
