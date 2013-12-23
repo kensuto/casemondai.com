@@ -53,6 +53,8 @@ class QuestionsController extends AppController {
 	
 	public function index() {
 		$this->set('questions',$this->Question->find('all'));
+//		$answers = $this->Answer->find('count',array('conditions' => array('Answer.question_id' => $questions['Question']['id'])));
+		$this->set( 'answers', $this->Answer->get_answer_count() );
 	}
 
 

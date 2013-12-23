@@ -33,7 +33,8 @@
 				array('controller' => 'questions', 'action' => 'detail', $question['Question']['id'])); ?></p>
 			</div>
 			<div class="questionHeaderCount">
-				<p>(<a href="">2件の回答</a>)</p>
+				<p>(<?php echo $this->Html->link((isset($answers[$question['Question']['id']])?$answers[$question['Question']['id']]:0).'件の回答',
+				array('controller' => 'questions', 'action' => 'detail', $question['Question']['id'])); ?>)</p>
 			</div>
 			<div class="updates">
 				<div class="update">

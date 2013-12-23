@@ -46,6 +46,7 @@ class TopsController extends AppController {
 	public $uses = array();
 
 	public function index() {
-		//とりあえず枠だけ
+	$this->set('questions',$this->Question->find('all'));
+
 	}
 }

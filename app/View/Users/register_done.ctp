@@ -22,16 +22,20 @@
 <!--中身の部分はじまり-->
 <div id="main">
 
-<div id="alert">
-	<p>
-		<img src="../../img/common/check.png">
-		ありがとうございます！ 会員登録が完了しました。
-	</p>
-	<div id="letsgo">
-	<p>さっそくケース問題を練習しましょう！</p>
+	<div id="alert">
+		<p>
+			<img src="../../img/common/check.png">
+			ありがとうございます！ 会員登録が完了しました。
+		</p>
+		<div id="letsgo">
+		<p>さっそくケース問題を練習しましょう！</p>
+		</div>
 	</div>
-</div>
+	
+	<div id="btnReg3">
+		<a href="/questions">
+				<input type="image" src="../../img/registar/btnReg3.png" alt="ケース問題の一覧を見る">
+		</a>
+	</div>
 
-<div id="btnReg3">
-	<input type="image" src="../../img/registar/btnReg3.png" alt="ケース問題の一覧を見る">
 </div>
